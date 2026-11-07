@@ -11,6 +11,10 @@ This is not a software project. There is no code, build, lint or test step. The 
 ## The business
 
 - **Name:** Jiu-Jitsu Ashkelon (written in English).
+- **Owner:** Netanel. Serves in the reserves (מילואים), so the studio needs someone in charge while he is away.
+- **Tools in use:** Arbox (studio management and lead app). A daily Instagram story about that day's class is already automated.
+- **Space search:** looking for 110+ m², target about ₪9,000 a month.
+- **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`).
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
 - **Trainees:** 55 at present (November 2026).
