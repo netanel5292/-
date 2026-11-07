@@ -10,7 +10,12 @@ This is not a software project. There is no code, build, lint or test step. The 
 
 ## The business
 
+- **Name:** Jiu-Jitsu Ashkelon (written in English).
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
+- **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
+- **Trainees:** 55 at present (November 2026).
+- **Membership:** most pay ₪280 a month; some pay ₪400 and some ₪230, by how often they train.
+- **Space costs:** rent ₪12,000 + VAT a month, public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
@@ -21,5 +26,6 @@ This is not a software project. There is no code, build, lint or test step. The 
 
 - Measure every marketing idea by the main goal: more paying trainees, toward about 85. Where possible, estimate cost and expected trainees gained.
 - Treat a lower rent from a move as a direct way to lower the break-even point, and weigh it against growth options.
-- Ask for the figures this file does not hold yet: the current number of trainees, membership prices, rent and other fixed costs, classes and age groups, and the studio's name. Add them here once the owner gives them.
+- The owner has little time. Prefer ideas and automations that are quick to set up and run with free or cheap tools, and give step-by-step instructions.
+- Still unknown: other fixed costs (coaches, insurance, utilities), lease terms, and how many trainees leave each month. Ask for them when they matter, and add them here.
 - Marketing content (posts, ads, reels scripts, landing pages) should speak to people in Ashkelon and nearby.
