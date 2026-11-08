@@ -7,6 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is not a software project. There is no code, build, lint or test step. The repository holds business and marketing material for the owner's martial-arts studio. Talk to the owner in Hebrew, and write content for the studio in Hebrew.
 
 - `CLAUDE_CODE_BUSINESS_COMMANDS.md`: a Hebrew guide to Claude Code commands, agents, video editing and reminders for promoting the business.
+- `.claude/agents/`: three subagents. `social` (posts, reels, captions), `ideas` (cheap growth ideas), `property` (new-space search). The dashboard shows them under "הצוות שלי"; a scheduled task runs the property search daily at 10:20 Sun–Fri (Israel) and writes to the `listings` collection and `agents/property`.
 
 ## The business
 
