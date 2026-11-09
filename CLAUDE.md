@@ -18,7 +18,7 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`). A scheduled task at 07:45 Sun–Thu (Israel) rewrites `studio/morning`: 3 focus tasks picked from the existing list, one idea, one task to drop. It never adds tasks.
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
-- **Trainees:** 55 at present (November 2026), including 5 recent sign-ups.
+- **Trainees:** 56 at present (9 November 2026; Oz Stark joined that day).
 - **Price list** (full version in `pricing/mechiron.html`, printable PDF `pricing/mechiron.pdf`):
   - Unlimited: ₪400 by standing order / credit card, ₪420 cash / Bit / PayBox.
   - 3 times a week ₪350; twice a week ₪280; once a week ₪180; open mat only ₪50 (a month).
