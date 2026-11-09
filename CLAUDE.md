@@ -19,7 +19,14 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
 - **Trainees:** 55 at present (November 2026), including 5 recent sign-ups.
-- **Membership:** most pay ₪280 a month; some pay ₪400 and some ₪230, by how often they train.
+- **Price list** (full version in `pricing/mechiron.html`, printable PDF `pricing/mechiron.pdf`):
+  - Unlimited: ₪400 by standing order / credit card, ₪420 cash / Bit / PayBox.
+  - 3 times a week ₪350; twice a week ₪280; once a week ₪180; open mat only ₪50 (a month).
+  - Single class ₪50; trial class ₪30. Discounts for reservists, soldiers and security forces: ask at the desk.
+  - Standing order on a credit card, charged from the sign-up date a month ahead. Cash / Bit / PayBox: paid in advance for the next two months.
+  - All members may come to open mat (Fridays and as announced in the WhatsApp group). Morning classes only by arrangement in the "אימוני בוקר" group.
+  - No classes on Pesach, Shavuot and Sukkot (including Chol HaMoed), Memorial Day and Independence Day, 2 days of Chanukah, and Purim day.
+  - Earlier note from the owner: most trainees pay ₪280.
 - **Space costs:** rent ₪12,000 + VAT a month, public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
