@@ -14,7 +14,11 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Name:** Jew Jitsu Ashkelon (the official English spelling; ג'ו-ג'יצו אשקלון in Hebrew).
 - **Owner:** Netanel. Serves in the reserves (מילואים), so the studio needs someone in charge while he is away.
 - **Tools in use:** Arbox (studio management and lead app). A daily Instagram story about that day's class is already automated.
-- **Space search:** looking for 110+ m², target about ₪9,000 a month.
+- **Space search:** looking for about 110–150 m², target about ₪9,000 a month, ideally without a broker. Deadline: a decision before early December 2026 (end of the first year).
+  - Brokers frustrate the owner (each claims ownership of listings), so prefer owners directly, the municipality and the regional council.
+  - Promising: 2–3 warehouses for rent in the Hof Ashkelon regional council, seen on Facebook Marketplace (10 Nov 2026). Cheap, need renovation; the owner likes this option. Check zoning / change-of-use permit before signing.
+  - Pending: an answer about a shelter in Eli Cohen. Municipal allocations unit (Anat Machluf, 08-6792437) allocates buildings to non-profits for free or a token fee, so a non-profit route is worth checking with lawyer Hajaj.
+  - Seen or offered: properties via brokers Tal and Bashiri (10 Nov), villas via Ron (requested).
 - **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`). A scheduled task at 07:45 Sun–Thu (Israel) rewrites `studio/morning`: 3 focus tasks picked from the existing list, one idea, one task to drop. It never adds tasks.
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
