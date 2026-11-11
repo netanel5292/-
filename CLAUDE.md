@@ -20,7 +20,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Promising: 2–3 warehouses for rent in the Hof Ashkelon regional council, seen on Facebook Marketplace (10 Nov 2026). Cheap, need renovation; the owner likes this option. Check zoning / change-of-use permit before signing. 11 Nov: the first owner refused (agricultural compound, said a studio could cause trouble).
   - Ashkelon municipality sports department: the owner visited on 11 Nov to ask about a partnership or a space; waiting for an answer.
   - Eli Cohen shelters/warehouses: visited, not suitable. Municipal allocations unit (Anat Machluf, 08-6792437) allocates buildings to non-profits for free or a token fee, so a non-profit route is worth checking with lawyer Hajaj.
-  - Seen or offered: properties via brokers Tal and Bashiri (10 Nov), villas via Ron (requested).
+  - Seen or offered: properties via brokers Tal and Bashiri (10 Nov), villas via Ron (requested); a house in Barnea with a 100 m² yard via Arik Ezra (11 Nov, option: cover the yard?).
 - **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`). A scheduled task at 07:45 Sun–Thu (Israel) rewrites `studio/morning`: 3 focus tasks picked from the existing list, one idea, one task to drop. It never adds tasks.
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
