@@ -16,7 +16,8 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Tools in use:** Arbox (studio management and lead app). A daily Instagram story about that day's class is already automated.
 - **Space search:** looking for about 110–150 m², target about ₪9,000 a month, ideally without a broker. Deadline: a decision before early December 2026 (end of the first year).
   - Brokers frustrate the owner (each claims ownership of listings), so prefer owners directly, the municipality and the regional council.
-  - Promising: 2–3 warehouses for rent in the Hof Ashkelon regional council, seen on Facebook Marketplace (10 Nov 2026). Cheap, need renovation; the owner likes this option. Check zoning / change-of-use permit before signing.
+  - Promising: 2–3 warehouses for rent in the Hof Ashkelon regional council, seen on Facebook Marketplace (10 Nov 2026). Cheap, need renovation; the owner likes this option. Check zoning / change-of-use permit before signing. 11 Nov: the first owner refused (agricultural compound, said a studio could cause trouble).
+  - Ashkelon municipality sports department: the owner visited on 11 Nov to ask about a partnership or a space; waiting for an answer.
   - Eli Cohen shelters/warehouses: visited, not suitable. Municipal allocations unit (Anat Machluf, 08-6792437) allocates buildings to non-profits for free or a token fee, so a non-profit route is worth checking with lawyer Hajaj.
   - Seen or offered: properties via brokers Tal and Bashiri (10 Nov), villas via Ron (requested).
 - **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`). A scheduled task at 07:45 Sun–Thu (Israel) rewrites `studio/morning`: 3 focus tasks picked from the existing list, one idea, one task to drop. It never adds tasks.
