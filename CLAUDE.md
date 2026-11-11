@@ -13,6 +13,7 @@ This is not a software project. There is no code, build, lint or test step. The 
 
 - **Name:** Jew Jitsu Ashkelon (the official English spelling; ג'ו-ג'יצו אשקלון in Hebrew).
 - **Owner:** Netanel. Serves in the reserves (מילואים), so the studio needs someone in charge while he is away.
+- **Paid ads:** about ₪500 a month of sponsored ads (as of Nov 2026). The current lease ends about 2.5 weeks after 11 Nov 2026.
 - **Tools in use:** Arbox (studio management and lead app). A daily Instagram story about that day's class is already automated.
 - **Space search:** looking for about 110–150 m², target about ₪9,000 a month, ideally without a broker. Deadline: a decision before early December 2026 (end of the first year).
   - Brokers frustrate the owner (each claims ownership of listings), so prefer owners directly, the municipality and the regional council.
