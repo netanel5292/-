@@ -38,12 +38,12 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
-- **Break-even:** about 85 active trainees.
+- **Break-even:** 88 registered trainees. **Big goal:** at least 110.
 - **What the owner is trying now:** automations, more advertising, and partnerships. The open question is whether these bring a real return, or whether the studio needs to move or change course.
 
 ## How to help
 
-- Measure every marketing idea by the main goal: more paying trainees, toward about 85. Where possible, estimate cost and expected trainees gained.
+- Measure every marketing idea by the main goal: more paying trainees, toward break-even at 88 and the big goal of 110. Where possible, estimate cost and expected trainees gained.
 - Treat a lower rent from a move as a direct way to lower the break-even point, and weigh it against growth options.
 - The owner has little time. Prefer ideas and automations that are quick to set up and run with free or cheap tools, and give step-by-step instructions.
 - Still unknown: other fixed costs (coaches, insurance, utilities), lease terms, and how many trainees leave each month. Ask for them when they matter, and add them here.
