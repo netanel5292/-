@@ -32,6 +32,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Standing order on a credit card, charged from the sign-up date a month ahead. Cash / Bit / PayBox: paid in advance for the next two months.
   - All members may come to open mat (Fridays and as announced in the WhatsApp group). Morning classes only by arrangement in the "אימוני בוקר" group.
   - No classes on Pesach, Shavuot and Sukkot (including Chol HaMoed), Memorial Day and Independence Day, 2 days of Chanukah, and Purim day.
+  - Private training (BJJ, wrestling, Muay Thai, classic boxing, self-defense): ₪230 a single session; ₪205 a session in a prepaid 5-pack; ₪185 a session in a prepaid 10-pack.
   - Earlier note from the owner: most trainees pay ₪280.
 - **Space costs:** rent ₪12,000 + VAT a month, public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.

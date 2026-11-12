@@ -5,13 +5,13 @@
 <title>מחירון Jew Jitsu Ashkelon</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Assistant:wght@400;600;700&display=swap">
 <style>
-@page{size:A4;margin:12mm}
+@page{size:A4;margin:9mm 11mm}
 *{box-sizing:border-box}
 html,body{margin:0;background:#fff;color:#000}
-body{font-family:"Assistant","Liberation Sans","DejaVu Sans",sans-serif;font-size:15.5px;line-height:1.4}
-.page{width:186mm;margin:0 auto;display:flex;flex-direction:column;gap:5mm}
+body{font-family:"Assistant","Liberation Sans","DejaVu Sans",sans-serif;font-size:15px;line-height:1.35}
+.page{width:186mm;margin:0 auto;display:flex;flex-direction:column;gap:4mm}
 h1,h2{font-family:"Rubik","Liberation Sans",sans-serif;margin:0}
-header{border:3px solid #000;border-radius:4mm;padding:5mm 6mm;display:flex;justify-content:space-between;align-items:center}
+header{border:3px solid #000;border-radius:4mm;padding:4mm 6mm;display:flex;justify-content:space-between;align-items:center}
 header h1{font-size:30px;font-weight:800;letter-spacing:.3px}
 header .en{font-family:"Rubik",sans-serif;font-weight:700;font-size:20px;direction:ltr}
 header .belt{font-size:40px}
@@ -19,7 +19,7 @@ h2{font-size:19px;font-weight:700;border-bottom:2px solid #000;padding-bottom:1.
 table{width:100%;border-collapse:collapse;font-size:17px}
 th{font-family:"Rubik",sans-serif;font-size:14px;font-weight:700;text-align:center;padding:2.5mm 2mm;border-bottom:2px solid #000}
 th:first-child{text-align:right}
-td{padding:3.2mm 2mm;border-bottom:1px solid #000}
+td{padding:2.6mm 2mm;border-bottom:1px solid #000}
 td.p{text-align:center;font-family:"Rubik",sans-serif;font-weight:800;font-size:22px;white-space:nowrap;font-variant-numeric:tabular-nums}
 td.p.span{border-right:1px dashed #000}
 tr.top td{background:#e6e6e6}
@@ -33,6 +33,16 @@ tr.top td{background:#e6e6e6}
 ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2mm;font-size:14.5px}
 li{display:flex;gap:2.5mm;align-items:flex-start}
 li .e{flex:none;width:7mm;text-align:center}
+.bottom{display:grid;grid-template-columns:1fr 78mm;gap:6mm;align-items:start}
+.private{border:3px solid #000;border-radius:4mm;padding:3.5mm 4mm;display:flex;flex-direction:column;gap:1.8mm;background:#f0f0f0}
+.private .ph{font-family:"Rubik",sans-serif;font-weight:800;font-size:19px;text-align:center}
+.private .ps{font-size:11.5px;text-align:center;border-bottom:1.5px solid #000;padding-bottom:2mm}
+.private .pr{display:flex;justify-content:space-between;align-items:baseline;font-size:14.5px;border-bottom:1px dashed #000;padding-bottom:1.5mm}
+.private .pr b{font-family:"Rubik",sans-serif;font-weight:800;font-size:18px;white-space:nowrap}
+.private .pr b small{font-family:"Assistant",sans-serif;font-weight:600;font-size:11px}
+.private .pr.best{border-bottom:0}
+.private .pr.best span{font-weight:700}
+.private .pn{font-size:11.5px;text-align:center}
 footer{text-align:center;font-family:"Rubik",sans-serif;font-weight:700;font-size:15px;border-top:2px solid #000;padding-top:3mm}
 </style>
 </head>
@@ -77,14 +87,24 @@ footer{text-align:center;font-family:"Rubik",sans-serif;font-weight:700;font-siz
   </ul>
 </section>
 
-<section>
-  <h2>🚫 ימים ללא אימונים</h2>
-  <ul>
-    <li><span class="e">🕎</span><span><b>פסח, שבועות וסוכות</b>, כולל חול המועד.</span></li>
-    <li><span class="e">🇮🇱</span><span><b>יום הזיכרון ויום העצמאות.</b></span></li>
-    <li><span class="e">🕯️</span><span><b>חנוכה:</b> יומיים בלי אימונים.</span></li>
-    <li><span class="e">🎭</span><span><b>פורים:</b> ביום החג אין אימונים.</span></li>
-  </ul>
+<section class="bottom">
+  <div>
+    <h2>🚫 ימים ללא אימונים</h2>
+    <ul>
+      <li><span class="e">🕎</span><span><b>פסח, שבועות וסוכות</b>, כולל חול המועד.</span></li>
+      <li><span class="e">🇮🇱</span><span><b>יום הזיכרון ויום העצמאות.</b></span></li>
+      <li><span class="e">🕯️</span><span><b>חנוכה:</b> יומיים בלי אימונים.</span></li>
+      <li><span class="e">🎭</span><span><b>פורים:</b> ביום החג אין אימונים.</span></li>
+    </ul>
+  </div>
+  <div class="private">
+    <div class="ph">🎯 אימונים אישיים</div>
+    <div class="ps">ג׳יו-ג׳יטסו · היאבקות · תאילנדי · אגרוף קלאסי · הגנה עצמית</div>
+    <div class="pr"><span>🥊 אימון בודד</span><b>230 ₪</b></div>
+    <div class="pr"><span>🔥 חבילת 5 אימונים</span><b>205 ₪ <small>לאימון</small></b></div>
+    <div class="pr best"><span>⭐ חבילת 10 אימונים</span><b>185 ₪ <small>לאימון</small></b></div>
+    <div class="pn">החבילות בתשלום מראש</div>
+  </div>
 </section>
 
 <footer>🥋 נתראה על המזרן! · Jew Jitsu Ashkelon</footer>
