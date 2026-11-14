@@ -38,6 +38,11 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
+- **Finances (from the owner's Excel, Nov 2026):** the dashboard tab "💰 כספים" (`finance/plan`, `finance/months`) holds the data; the owner marks expenses as paid and edits amounts there.
+  - Monthly fixed costs about ₪22,110 (₪20,100 + 10% buffer): rent ₪14,200 incl. VAT, arnona 1,000, electricity/water 500, extra coach 1,000, ads 2,000 (actual ~500), software 200, accountant 500, Arbox 600, cleaning 100. Insurance, owner's salary and a secretary have no amount yet.
+  - Income: average membership ₪270, private training ~₪400, sales ~₪700 a month. A normal month without rent grace loses about ₪5,900.
+  - Start capital ₪160,000 (₪119,800 of it family loans). About ₪39,000 left after November; Oct and Nov had a rent grace of ₪14,180 each.
+  - By the Excel numbers, break-even is about 78 trainees (the dashboard keeps 88 as a safety margin). At ₪6,000 + VAT rent it drops to about 52.
 - **Break-even:** 88 registered trainees. **Big goal:** at least 110.
 - **What the owner is trying now:** automations, more advertising, and partnerships. The open question is whether these bring a real return, or whether the studio needs to move or change course.
 
