@@ -48,3 +48,5 @@ This is not a software project. There is no code, build, lint or test step. The 
 - The owner has little time. Prefer ideas and automations that are quick to set up and run with free or cheap tools, and give step-by-step instructions.
 - Still unknown: other fixed costs (coaches, insurance, utilities), lease terms, and how many trainees leave each month. Ask for them when they matter, and add them here.
 - Marketing content (posts, ads, reels scripts, landing pages) should speak to people in Ashkelon and nearby.
+- The owner likes it when Claude proposes in-between steps on its own (e.g. "check the zoning with the municipality first"): keep adding them as quick tasks or weekly projects.
+- Social media workflow: the owner drops photos/videos into the Google Drive folder "Jew Jitsu – מדיה לפרסום" (id 1AaGLIPz3T7jcP9WzLEN6BYxoiUZtbVXi; subfolder "קליסטניקס" 1j4DJIbuG3owcu8N4fvG-Jvyi4iNuKW9A). Claude reads them, designs the post and caption, and saves the result in "מוכן לפרסום" (1AE7Iu3c5h1U1ZPFw9SRTt13BQ8HPIoNT). There is no Instagram/TikTok connector, so the owner (or Meta Business Suite scheduling) does the actual posting.
