@@ -21,7 +21,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Ashkelon municipality sports department: the owner visited on 11 Nov to ask about a partnership or a space; waiting for an answer.
   - Eli Cohen shelters/warehouses: visited, not suitable. Municipal allocations unit (Anat Machluf, 08-6792437) allocates buildings to non-profits for free or a token fee, so a non-profit route is worth checking with lawyer Hajaj.
   - Seen or offered: properties via brokers Tal and Bashiri (10 Nov), villas via Ron (requested); a 100 m² yard in Migdal via Arik Ezra (11 Nov, option: cover the yard?).
-  - **The two relevant options (15 Nov):** Ami's property in Migdal (₪5,500–6,000, call on 15 Nov) first, Arik Ezra's yard in Migdal second. Listings the property agent found on yad2 (Neve Alonim shop, Migdal office, a 120 m² warehouse) are not on the owner's radar.
+  - **The relevant options (16 Nov):** the property at the entrance to Migdal (contact: Tomer, not Ami; ₪5,500–6,000; viewing on 16 Nov at 14:00) first, Arik Ezra's yard in Migdal second, plus two Facebook Marketplace leads (a 170 m² building; Matan Shmuel's house with a garden). The search now also covers the Hof Ashkelon regional council (business zones easy; farm compounds need a change-of-use permit). Hof Ashkelon sports: Sofia Moisa, sport@hof-ashkelon.org.il, council switchboard 08-6776402. Listings the property agent found on yad2 (Neve Alonim shop, Migdal office, a 120 m² warehouse) are not on the owner's radar.
 - **Task dashboard:** https://claude.ai/artifact/AVqhSAjH9etHzc46Usz6NZ (tasks, leads, quick actions; data in its `tasks` collection and `studio/settings`). A scheduled task at 07:45 Sun–Thu (Israel) rewrites `studio/morning`: 5 focus tasks picked from the existing list, a day schedule from Google Calendar, one idea, one task to drop. It never adds tasks. The "🎯 השבוע" tab holds weekly projects (`projects` collection) with a status and a note each. The owner likes the "פחות מ-3 דקות" quick-task category: keep feeding it.
 - **Type:** a martial-arts studio (מכון אומנויות לחימה).
 - **Classes:** Brazilian jiu-jitsu, classic boxing, Muay Thai, wrestling, and kids' classes (mostly mixed disciplines).
@@ -35,7 +35,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - No classes on Pesach, Shavuot and Sukkot (including Chol HaMoed), Memorial Day and Independence Day, 2 days of Chanukah, and Purim day.
   - Private training (BJJ, wrestling, Muay Thai, classic boxing, self-defense): ₪230 a single session; ₪205 a session in a prepaid 5-pack; ₪185 a session in a prepaid 10-pack.
   - Earlier note from the owner: most trainees pay ₪280.
-- **Space costs:** rent ₪12,000 + VAT a month, public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
+- **Space costs:** rent ₪12,000 + VAT a month (rises by ₪1,000 + VAT from 1 Dec 2026; the dashboard's "🔮 שנה קדימה" forecast includes it), public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
 - **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
