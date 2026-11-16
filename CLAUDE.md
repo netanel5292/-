@@ -40,8 +40,8 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
 - **Finances (from the owner's Excel, Nov 2026):** the dashboard tab "💰 כספים" (`finance/plan`, `finance/months`) holds the data; the owner marks expenses as paid and edits amounts there.
-  - Monthly fixed costs about ₪22,110 (₪20,100 + 10% buffer): rent ₪14,200 incl. VAT, arnona 1,000, electricity/water 500, extra coach 1,000, ads 2,000 (actual ~500), software 200, accountant 500, Arbox 600, cleaning 100. Insurance, owner's salary and a secretary have no amount yet.
-  - Income: average membership ₪270, private training ~₪400, sales ~₪700 a month. A normal month without rent grace loses about ₪5,900.
+  - Monthly fixed costs about ₪23,760 (₪21,600 + 10% buffer): rent ₪14,200 incl. VAT (₪15,380 from 1 Dec), arnona 2,500 (1,000 public + 1,500 regular), electricity/water 500, extra coach 1,000, ads 2,000 (actual ~500), software 200, accountant 500, Arbox 600, cleaning 100. Insurance, owner's salary and a secretary have no amount yet.
+  - Income: average membership ₪270, private training ~₪400, sales ~₪700 a month. A normal month without rent grace loses about ₪7,500 (from Dec, staying in the mall). Migdal scenario in the dashboard: ₪6,000 + VAT rent, ₪1,200 arnona, ₪5,000 brokerage once; this turns the month positive at the current trainee count.
   - Start capital ₪160,000 (₪119,800 of it family loans). About ₪39,000 left after November; Oct and Nov had a rent grace of ₪14,180 each.
   - By the Excel numbers, break-even is about 78 trainees (the dashboard keeps 88 as a safety margin). At ₪6,000 + VAT rent it drops to about 52.
 - **Break-even:** 88 registered trainees. **Big goal:** at least 110.
