@@ -9,14 +9,14 @@
 *{box-sizing:border-box}
 html,body{margin:0}
 body{font-family:"Assistant","Liberation Sans",sans-serif;color:#141a2b}
-.sheet{width:297mm;height:210mm;position:relative;overflow:hidden;padding:8mm 9mm 7mm;display:flex;flex-direction:column;gap:3.5mm;background:#f4f6fb}
+.sheet{width:297mm;height:210mm;position:relative;overflow:hidden;padding:6mm 8mm 6mm;display:flex;flex-direction:column;gap:2.5mm;background:#f4f6fb}
 .bg{position:absolute;inset:-20mm;pointer-events:none;opacity:.06;font-size:44px;line-height:1.9;letter-spacing:24px;word-break:break-all;transform:rotate(-10deg)}
-header{position:relative;background:#141a2b;color:#fff;border-radius:5mm;padding:4mm 7mm;display:flex;justify-content:space-between;align-items:center;overflow:hidden}
+header{position:relative;flex:none;background:#141a2b;color:#fff;border-radius:5mm;padding:3mm 6mm;display:flex;justify-content:space-between;align-items:center;overflow:hidden}
 header::after{content:"";position:absolute;left:-8mm;bottom:-4mm;width:80mm;height:7mm;background:#e8b92e;transform:rotate(-5deg)}
-header h1{font-family:"Rubik",sans-serif;font-weight:900;font-size:32px;margin:0;line-height:1}
+header h1{font-family:"Rubik",sans-serif;font-weight:900;font-size:28px;margin:0;line-height:1}
 header .sub{font-family:"Rubik",sans-serif;font-weight:700;font-size:16px;color:#e8b92e;margin-top:1.5mm}
-header .legend{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:2mm;justify-content:flex-end;max-width:150mm}
-.legend span{background:#fff;color:#141a2b;border-radius:999px;padding:1mm 3mm;font-weight:800;font-size:12px;border:2.5px solid var(--c)}
+header .legend{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:1.5mm;justify-content:flex-end;max-width:175mm}
+.legend span{background:#fff;color:#141a2b;border-radius:999px;padding:.6mm 2.4mm;font-weight:800;font-size:11px;border:2.5px solid var(--c)}
 table{position:relative;width:100%;flex:1;border-collapse:separate;border-spacing:1.6mm;table-layout:fixed}
 th{background:#141a2b;color:#fff;font-family:"Rubik",sans-serif;font-weight:800;font-size:17px;padding:2.2mm 1mm;border-radius:3mm}
 th.slot{background:transparent;color:#5d6680;font-size:12px;width:20mm}
@@ -30,9 +30,28 @@ td.e{background:rgba(255,255,255,.5);border-radius:3mm}
 .c .n small{display:block;font-weight:600;font-size:10.5px;color:#5d6680}
 .kids{--c:#e8b92e}.bjj{--c:#1f4fd1}.box{--c:#d6332b}.thai{--c:#c2410c}.grap{--c:#1c8a4e}.morn{--c:#7c3aed}.open{--c:#0891b2}.misc{--c:#5d6680}
 .kids .c{background:#fff8e1}
-.foot{position:relative;display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid #141a2b;border-radius:4mm;padding:2.5mm 6mm;font-weight:700;font-size:13.5px}
+.foot{position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid #141a2b;border-radius:4mm;padding:2.5mm 6mm;font-weight:700;font-size:13.5px}
 .foot small{color:#5d6680;font-weight:600}
 .foot .ph{font-family:"Rubik",sans-serif;font-weight:800;font-size:17px;direction:ltr}
+
+/* bigger boxes + per-discipline style */
+table{border-spacing:1.5mm}
+.c{padding:1.8mm 2.4mm;gap:.6mm;min-height:13mm;position:relative;overflow:hidden;border-radius:3.5mm;background:color-mix(in srgb,var(--c) 9%,#fff);border:1.5px solid color-mix(in srgb,var(--c) 35%,#fff);border-inline-start:6px solid var(--c)}
+.c .t{font-size:14px;color:var(--c)}
+.c .n{font-size:15px;position:relative;z-index:1;line-height:1.15}
+.c .n small{font-size:11.5px}
+.c::after{position:absolute;left:1.5mm;bottom:-1mm;font-size:30px;opacity:.16;line-height:1}
+.bjj .c::after{content:"🥋"}.box .c::after{content:"🥊"}.thai .c::after{content:"🦵"}.grap .c::after{content:"🤼"}.kids .c::after{content:"🧒"}.morn .c::after{content:"🌅"}.open .c::after{content:"🤸"}.misc .c::after{content:"✨"}
+.bjj .c{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 12%,#fff),#fff)}
+.box .c{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 12%,#fff),#fff)}
+.thai .c{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 10%,#fff) 0 6px,#fff 6px 12px)}
+.grap .c{background:radial-gradient(circle at 100% 0,color-mix(in srgb,var(--c) 18%,#fff),#fff 70%)}
+.kids .c{background:radial-gradient(circle at 0 100%,#ffe9a8,#fff8e1 70%)}
+.c.new{border:2.5px solid var(--c);box-shadow:0 0 0 2px #fff,0 0 0 4px color-mix(in srgb,var(--c) 40%,#fff)}
+.c.new::after{font-size:44px;opacity:.28;bottom:-2mm}
+.badge{position:absolute;top:1.5mm;left:1.5mm;background:var(--c);color:#fff;font-family:"Rubik",sans-serif;font-weight:800;font-size:10.5px;padding:.4mm 2mm;border-radius:999px;z-index:2}
+th{font-size:18px}
+td.slot{font-size:14px}
 </style>
 </head>
 <body>
@@ -63,7 +82,9 @@ td.e{background:rgba(255,255,255,.5);border-radius:3mm}
       </tr>
       <tr>
         <td class="slot">☀️<br>צהריים</td>
-        <td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td>
+        <td class="e"></td><td class="e"></td>
+        <td class="grap"><div class="c new"><span class="badge">✨ חדש</span><span class="t">13:30</span><span class="n">🤼 גראפלינג<small>אימון צהריים</small></span></div></td>
+        <td class="e"></td><td class="e"></td>
         <td class="open"><div class="c"><span class="t">13:00</span><span class="n">🤸 מזרון פתוח<small>לכל המנויים</small></span></div></td>
       </tr>
       <tr>
@@ -88,7 +109,7 @@ td.e{background:rgba(255,255,255,.5);border-radius:3mm}
         <td class="thai"><div class="c"><span class="t">18:00–19:15</span><span class="n">🦵 אגרוף תאילנדי</span></div></td>
         <td class="box"><div class="c"><span class="t">18:30–19:30</span><span class="n">🥊 אגרוף קלאסי</span></div></td>
         <td class="thai"><div class="c"><span class="t">18:00–19:15</span><span class="n">🦵 תאילנדי / MMA</span></div></td>
-        <td class="bjj"><div class="c"><span class="t">18:00–19:00</span><span class="n">🥋 ג׳יו-ג׳יטסו No-Gi</span></div></td>
+        <td class="bjj"><div class="c"><span class="t">18:00–19:00</span><span class="n">🥋 ג׳יו-ג׳יטסו No&#8209;Gi</span></div></td>
         <td class="box"><div class="c"><span class="t">18:00–19:15</span><span class="n">🥊 אגרוף קלאסי</span></div></td>
         <td class="e"></td>
       </tr>
@@ -98,7 +119,7 @@ td.e{background:rgba(255,255,255,.5);border-radius:3mm}
         <td class="e"></td>
         <td class="grap"><div class="c"><span class="t">19:15–21:15</span><span class="n">🤼 ג׳יו-ג׳יטסו<small>היאבקות</small></span></div></td>
         <td class="e"></td>
-        <td class="bjj"><div class="c"><span class="t">19:15–20:30</span><span class="n">🥋 ג׳יו-ג׳יטסו No-Gi</span></div></td>
+        <td class="bjj"><div class="c"><span class="t">19:15–20:30</span><span class="n">🥋 ג׳יו-ג׳יטסו No&#8209;Gi</span></div></td>
         <td class="e"></td>
       </tr>
       <tr>
