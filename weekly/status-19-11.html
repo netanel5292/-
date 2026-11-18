@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>מצב העסק 19.11</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800;900&family=Assistant:wght@600;700;800&display=swap">
+<style>
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:"Assistant",sans-serif;color:#141a2b}
+.sheet{width:1080px;min-height:1920px;position:relative;overflow:hidden;background:#eef1f7;padding:36px 44px;display:flex;flex-direction:column;gap:14px}
+header{position:relative;height:250px;border-radius:34px;overflow:hidden;background:#0b1430;color:#fff;display:flex;align-items:center;padding:0 40px;gap:28px;flex:none}
+header .art{position:absolute;inset:0;background:url(../flyer/img/fight.png) left center/62% auto no-repeat;opacity:.55;-webkit-mask:linear-gradient(to left,transparent 30%,#000 75%);mask:linear-gradient(to left,transparent 30%,#000 75%)}
+header .logo{position:relative;width:190px;height:190px;overflow:hidden;background:#fff;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);flex:none}
+header .logo img{width:175px}
+header .tx{position:relative}
+header h1{font-family:"Rubik";font-weight:900;font-size:76px;margin:0;line-height:1}
+header .d1{margin-top:12px;font-family:"Rubik";font-weight:700;font-size:30px;color:#ffd65c}
+header .d2{margin-top:4px;font-size:26px;font-weight:700;color:#c9d4f5}
+.count{flex:none;background:linear-gradient(100deg,#d6332b,#ef6a3a);color:#fff;border-radius:26px;padding:20px 30px;display:flex;align-items:center;gap:22px;box-shadow:0 10px 24px rgba(214,51,43,.3)}
+.count .n{font-family:"Rubik";font-weight:900;font-size:92px;line-height:.9;background:#fff;color:#d6332b;border-radius:20px;padding:6px 18px 12px}
+.count b{display:block;font-family:"Rubik";font-weight:800;font-size:38px}
+.count span{font-size:26px;font-weight:700;opacity:.95}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:none}
+.k{background:#fff;border-radius:24px;padding:16px 16px 14px;border-top:9px solid var(--c);box-shadow:0 6px 14px rgba(20,26,43,.06)}
+.k .e{font-size:38px;line-height:1}
+.k b{display:block;font-family:"Rubik";font-weight:900;font-size:44px;line-height:1.1;color:var(--c);direction:ltr;text-align:right}
+.k span{font-size:21px;font-weight:800;color:#4a5370;line-height:1.2;display:block}
+.card{background:#fff;border-radius:28px;padding:16px 24px;box-shadow:0 6px 14px rgba(20,26,43,.06);flex:none}
+.card h2{font-family:"Rubik";font-weight:800;font-size:32px;margin:0 0 6px;display:flex;align-items:center;gap:12px}
+.card h2 small{font-family:"Assistant";font-size:22px;color:#5d6680;font-weight:700;margin-inline-start:auto}
+.bv{font-family:"Rubik";font-weight:800;font-size:24px;text-anchor:middle;fill:#141a2b}
+.bm{font-family:"Assistant";font-weight:800;font-size:22px;text-anchor:middle;fill:#4a5370}
+.bl{font-family:"Rubik";font-weight:800;font-size:24px;fill:#d6332b}
+.ax{font-family:"Rubik";font-weight:700;font-size:21px;text-anchor:end;fill:#5d6680}
+.lv{font-family:"Rubik";font-weight:900;font-size:28px;text-anchor:middle}
+.leg{display:flex;gap:22px;font-size:22px;font-weight:800;margin-top:2px}
+.leg i{display:inline-block;width:30px;height:8px;border-radius:4px;vertical-align:middle;margin-inline-end:8px}
+.places{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.pl{border-radius:20px;padding:12px 14px;background:var(--bg);border:3px solid var(--c);text-align:center}
+.pl .t{font-weight:800;font-size:22px}
+.pl b{display:block;font-family:"Rubik";font-weight:900;font-size:46px;color:var(--c);line-height:1.05}
+.pl span{font-size:19px;font-weight:800;color:#4a5370}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:none}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.list li{font-size:23px;font-weight:700;line-height:1.25;display:flex;gap:10px}
+.list li .i{font-size:28px;flex:none;width:36px;text-align:center}
+.recs{background:#0b1430;color:#fff;border-radius:28px;padding:22px 28px 34px;flex:none;position:relative;overflow:hidden}
+.recs::after{content:"";position:absolute;left:-30px;bottom:-14px;width:380px;height:26px;background:#e8b92e;transform:rotate(-4deg)}
+.recs h2{font-family:"Rubik";font-weight:800;font-size:34px;margin:0 0 12px;color:#ffd65c}
+.recs ol{margin:0;padding-inline-start:40px;display:flex;flex-direction:column;gap:10px}
+.recs li{font-size:25px;font-weight:700;line-height:1.3}
+.recs li b{color:#ffd65c}
+.foot{text-align:center;font-size:19px;font-weight:700;color:#5d6680;flex:none}
+</style>
+</head>
+<body>
+<div class="sheet">
+<header><div class="art"></div>
+  <div class="logo"><img src="../flyer/img/logo.png" alt="לוגו"></div>
+  <div class="tx"><h1>מצב העסק</h1><div class="d1">יום חמישי · ט׳ בכסלו תשפ״ז</div><div class="d2">19.11.2026 · Jew Jitsu Ashkelon 🥋</div></div>
+</header>
+
+<div class="count"><div class="n">11</div><div><b>ימים לסוף החוזה ולסוף השנה הראשונה 🎉</b><span>30.11 · שבוע וחצי להחליט: נשארים בקניון או עוברים</span></div></div>
+
+<div class="kpis">
+  <div class="k" style="--c:#1f4fd1"><div class="e">🥋</div><b>60</b><span>מתאמנים<br>(14 בינואר ×4)</span></div>
+  <div class="k" style="--c:#e8a10b"><div class="e">🎯</div><b>78</b><span>לאיזון בקניון<br>חסרים 18</span></div>
+  <div class="k" style="--c:#d6332b"><div class="e">📉</div><b>-4.7K</b><span>בחודש רגיל<br>(הכנסות 17.3K)</span></div>
+  <div class="k" style="--c:#6b4fd8"><div class="e">🏦</div><b>22.5K</b><span>בקופה<br>~4.8 חודשים</span></div>
+</div>
+
+<div class="card"><h2>📈 השנה הראשונה: מתאמנים בכל חודש <small>הקו האדום = איזון</small></h2><svg viewBox="0 0 900 190" width="100%" direction="ltr"><rect x="824.4" y="133.5" width="51.2" height="20.5" rx="8" fill="#1f4fd1"/><text x="850.0" y="126.5" class="bv">14</text><text x="850.0" y="180" class="bm">ינו</text><rect x="744.4" y="110.0" width="51.2" height="44.0" rx="8" fill="#1f4fd1"/><text x="770.0" y="103.0" class="bv">30</text><text x="770.0" y="180" class="bm">פבר</text><rect x="664.4" y="108.6" width="51.2" height="45.4" rx="8" fill="#1f4fd1"/><text x="690.0" y="101.6" class="bv">31</text><text x="690.0" y="180" class="bm">מרץ</text><rect x="584.4" y="85.1" width="51.2" height="68.9" rx="8" fill="#1f4fd1"/><text x="610.0" y="78.1" class="bv">47</text><text x="610.0" y="180" class="bm">אפר</text><rect x="504.4" y="73.4" width="51.2" height="80.6" rx="8" fill="#1f4fd1"/><text x="530.0" y="66.4" class="bv">55</text><text x="530.0" y="180" class="bm">מאי</text><rect x="424.4" y="63.2" width="51.2" height="90.8" rx="8" fill="#1f4fd1"/><text x="450.0" y="56.2" class="bv">62</text><text x="450.0" y="180" class="bm">יונ</text><rect x="344.4" y="88.1" width="51.2" height="65.9" rx="8" fill="#1f4fd1"/><text x="370.0" y="81.1" class="bv">45</text><text x="370.0" y="180" class="bm">יול</text><rect x="264.4" y="85.1" width="51.2" height="68.9" rx="8" fill="#1f4fd1"/><text x="290.0" y="78.1" class="bv">47</text><text x="290.0" y="180" class="bm">אוג</text><rect x="184.4" y="80.7" width="51.2" height="73.3" rx="8" fill="#1f4fd1"/><text x="210.0" y="73.7" class="bv">50</text><text x="210.0" y="180" class="bm">ספט</text><rect x="104.4" y="88.1" width="51.2" height="65.9" rx="8" fill="#1f4fd1"/><text x="130.0" y="81.1" class="bv">45</text><text x="130.0" y="180" class="bm">אוק</text><rect x="24.4" y="66.1" width="51.2" height="87.9" rx="8" fill="#e8b92e"/><text x="50.0" y="59.1" class="bv">60</text><text x="50.0" y="180" class="bm">נוב</text><line x1="10" x2="890" y1="39.7" y2="39.7" stroke="#d6332b" stroke-width="3" stroke-dasharray="10 7"/><text x="14" y="32.7" class="bl" text-anchor="start">🎯 איזון: 78</text></svg></div>
+
+<div class="card"><h2>🔮 הקופה בשנה הקרובה <small>בהנחת +2 מתאמנים בחודש</small></h2>
+  <div class="leg"><span><i style="background:#d6332b"></i>🏢 נשארים בקניון (15,380 + ארנונה 2,500)</span><span><i style="background:#1c8a4e"></i>🏠 מגדל (6,000 + מע״מ)</span></div>
+  <svg viewBox="-90 0 990 270" width="100%" direction="ltr"><line x1="30" x2="820" y1="230.0" y2="230.0" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="237.0" class="ax" text-anchor="start">-20K</text><line x1="30" x2="820" y1="198.3" y2="198.3" stroke="#141a2b" stroke-width="3"/><text x="830" y="205.3" class="ax" text-anchor="start">0K</text><line x1="30" x2="820" y1="166.6" y2="166.6" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="173.6" class="ax" text-anchor="start">20K</text><line x1="30" x2="820" y1="134.9" y2="134.9" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="141.9" class="ax" text-anchor="start">40K</text><line x1="30" x2="820" y1="103.2" y2="103.2" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="110.2" class="ax" text-anchor="start">60K</text><line x1="30" x2="820" y1="71.5" y2="71.5" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="78.5" class="ax" text-anchor="start">80K</text><line x1="30" x2="820" y1="39.8" y2="39.8" stroke="#dbe0ea" stroke-width="1.5"/><text x="830" y="46.8" class="ax" text-anchor="start">100K</text><rect x="30.0" y="198.3" width="427.9" height="31.7" fill="#d6332b" opacity=".08"/><polyline points="820.0,162.6 754.2,163.8 688.3,156.2 622.5,147.7 556.7,138.4 490.8,128.2 425.0,117.2 359.2,105.3 293.3,92.5 227.5,79.0 161.7,64.5 95.8,49.2 30.0,33.0" fill="none" stroke="#1c8a4e" stroke-width="7" stroke-linejoin="round"/><polyline points="820.0,162.6 754.2,171.0 688.3,178.7 622.5,185.4 556.7,191.3 490.8,196.3 425.0,200.5 359.2,203.9 293.3,206.3 227.5,207.9 161.7,208.7 95.8,208.6 30.0,207.7" fill="none" stroke="#d6332b" stroke-width="7" stroke-linejoin="round"/><circle cx="820.0" cy="162.6" r="5.5" fill="#d6332b"/><circle cx="754.2" cy="171.0" r="5.5" fill="#d6332b"/><circle cx="688.3" cy="178.7" r="5.5" fill="#d6332b"/><circle cx="622.5" cy="185.4" r="5.5" fill="#d6332b"/><circle cx="556.7" cy="191.3" r="5.5" fill="#d6332b"/><circle cx="490.8" cy="196.3" r="5.5" fill="#d6332b"/><circle cx="425.0" cy="200.5" r="5.5" fill="#d6332b"/><circle cx="359.2" cy="203.9" r="5.5" fill="#d6332b"/><circle cx="293.3" cy="206.3" r="5.5" fill="#d6332b"/><circle cx="227.5" cy="207.9" r="5.5" fill="#d6332b"/><circle cx="161.7" cy="208.7" r="5.5" fill="#d6332b"/><circle cx="95.8" cy="208.6" r="5.5" fill="#d6332b"/><circle cx="30.0" cy="207.7" r="5.5" fill="#d6332b"/><circle cx="820.0" cy="162.6" r="5.5" fill="#1c8a4e"/><circle cx="754.2" cy="163.8" r="5.5" fill="#1c8a4e"/><circle cx="688.3" cy="156.2" r="5.5" fill="#1c8a4e"/><circle cx="622.5" cy="147.7" r="5.5" fill="#1c8a4e"/><circle cx="556.7" cy="138.4" r="5.5" fill="#1c8a4e"/><circle cx="490.8" cy="128.2" r="5.5" fill="#1c8a4e"/><circle cx="425.0" cy="117.2" r="5.5" fill="#1c8a4e"/><circle cx="359.2" cy="105.3" r="5.5" fill="#1c8a4e"/><circle cx="293.3" cy="92.5" r="5.5" fill="#1c8a4e"/><circle cx="227.5" cy="79.0" r="5.5" fill="#1c8a4e"/><circle cx="161.7" cy="64.5" r="5.5" fill="#1c8a4e"/><circle cx="95.8" cy="49.2" r="5.5" fill="#1c8a4e"/><circle cx="30.0" cy="33.0" r="5.5" fill="#1c8a4e"/><text x="820.0" y="262" class="bm">נוב׳</text><text x="622.5" y="262" class="bm">פבר׳</text><text x="425.0" y="262" class="bm">מאי</text><text x="227.5" y="262" class="bm">אוג׳</text><text x="30.0" y="262" class="bm">נוב׳ 27</text><text x="18" y="44" class="lv" fill="#1c8a4e" text-anchor="end">+104K</text><text x="18" y="215.7" class="lv" fill="#d6332b" text-anchor="end">-6K</text><text x="425.0" y="240.5" class="lv" fill="#d6332b">⚠️ נגמר</text></svg>
+  <div class="places">
+    <div class="pl" style="--c:#d6332b;--bg:#fff1f0"><div class="t">🏢 קניון</div><b>78</b><span>מתאמנים לאיזון</span></div>
+    <div class="pl" style="--c:#e8a10b;--bg:#fff8e6"><div class="t">🔟 10K + מע״מ</div><b>63</b><span>ארנונה 900</span></div>
+    <div class="pl" style="--c:#1c8a4e;--bg:#ecf8f1"><div class="t">🏠 מגדל</div><b>47</b><span>✅ +3,700 בחודש כבר היום</span></div>
+  </div>
+</div>
+
+<div class="two">
+  <div class="card"><h2>🎯 על השולחן השבוע</h2><ul class="list">
+    <li><span class="i">📋</span>ממומן + טופס לידים, ליאור מטפל</li>
+    <li><span class="i">🎬</span>ממומן לסרטון: תקציב 1,500</li>
+    <li><span class="i">👥</span>הרב גד: 5 חבר׳ה ביחד</li>
+    <li><span class="i">🌅</span>בוקר בשלישי · 🌙 ערב ברביעי</li>
+    <li><span class="i">👩</span>להגדיל את אימון הנשים</li>
+  </ul></div>
+  <div class="card"><h2>⚙️ רץ לבד / חיסכון</h2><ul class="list">
+    <li><span class="i">🏦</span>עדכון בנק יומי + מייל בוקר</li>
+    <li><span class="i">☀️</span>80/20 כל בוקר ב-07:45</li>
+    <li><span class="i">🔎</span>סוכן נכסים כל יום</li>
+    <li><span class="i">💸</span>רו״ח שנתי, Arbox, תוכנות</li>
+    <li><span class="i">🛡️</span>ביטוח 400 נכנס לחישוב</li>
+  </ul></div>
+</div>
+
+<section class="recs"><h2>💡 מה כדאי לעשות עכשיו</h2><ol>
+  <li><b>להחליט על המקום עד 25.11.</b> במגדל העסק ברווח כבר עם 60 מתאמנים.</li>
+  <li><b>לא לחתום בקניון</b> לפני שיש תשובה סופית מתומר.</li>
+  <li><b>כל ליד: לחזור תוך 5 דקות.</b> זה מה שהופך ממומן למתאמנים.</li>
+  <li><b>אם נשארים:</b> הקופה נגמרת בערך במאי. צריך הלוואה של כ-10K עד מרץ.</li>
+</ol></section>
+
+<div class="foot">הנתונים מהלוח · צפי בלבד, לא ודאות · ג׳ו-ג׳יצו אשקלון</div>
+</div>
+</body>
+</html>
