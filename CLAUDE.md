@@ -58,3 +58,12 @@ This is not a software project. There is no code, build, lint or test step. The 
 - Marketing content (posts, ads, reels scripts, landing pages) should speak to people in Ashkelon and nearby.
 - The owner likes it when Claude proposes in-between steps on its own (e.g. "check the zoning with the municipality first"): keep adding them as quick tasks or weekly projects.
 - Social media workflow: the owner drops photos/videos into the Google Drive folder "Jew Jitsu – מדיה לפרסום" (id 1AaGLIPz3T7jcP9WzLEN6BYxoiUZtbVXi; subfolder "קליסטניקס" 1j4DJIbuG3owcu8N4fvG-Jvyi4iNuKW9A). Claude reads them, designs the post and caption, and saves the result in "מוכן לפרסום" (1AE7Iu3c5h1U1ZPFw9SRTt13BQ8HPIoNT). There is no Instagram/TikTok connector, so the owner (or Meta Business Suite scheduling) does the actual posting.
+
+## Where things stand (handoff, 19 Nov 2026)
+
+- **Decisions this week:** the space (Tomer, Migdal entrance, `m_place`) before the lease ends on 30 Nov; the lead-form ad with Lior Ben Hamo handling leads (`m_leadform`, weekly project p11, budget ₪1,000); retention (`m_retain`, project p12); a "year one" campaign for 30 Nov (`m_year1`); a demo class at the Chabad school.
+- **Hot leads:** HaRav Gad's group of 4–5 (12% off each by standing order, plus friend-brings-friend: 50% off the second month for each referrer whose friend signs up; task `m_gadref`); Shai (classic boxing, Mon 23 Nov 18:30, calendar reminder 09:00); Olga (daughters Eva 5 and Shaylin 6) and Yavnia Cohen (daughter 5): book them into the same kids' trial; Tehila Shabo (15, Muay Thai).
+- **Dashboard tabs added this week:** 🧱 morning blocks (drag tasks), priority tags 🔴/🟡/⚪ with a filter in the tasks tab, 👩 women and girls lead group (sub-tags: wants a woman coach / Muay Thai only / young girls), finance: real bank balance, card installments, joins vs churn, trend chart, what-if line, loan box.
+- **Dashboard technical note:** the artifact runtime returns frozen (read-only) snapshot data; the page deep-copies every snapshot (`dc()`). Keep doing that in any new code, or edits silently fail.
+- **Files:** latest business-status flyer `weekly/status-19-11.png`; price list `pricing/mechiron.*` (trial ₪25).
+- **Open questions for the owner:** is the old lead "נערה בת 15: לחזור לאם" Tehila? Exact spelling of "אור יוספשווילי"? Coach pay and lease terms.
