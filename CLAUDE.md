@@ -29,7 +29,7 @@ This is not a software project. There is no code, build, lint or test step. The 
 - **Price list** (full version in `pricing/mechiron.html`, printable PDF `pricing/mechiron.pdf`):
   - Unlimited: ₪400 by standing order / credit card, ₪420 cash / Bit / PayBox.
   - 3 times a week ₪350; twice a week ₪280; once a week ₪180; open mat only ₪50 (a month).
-  - Single class ₪50; trial class ₪30. Discounts for reservists, soldiers and security forces: ask at the desk.
+  - Single class ₪50. Trial class (from 19 Nov 2026): ₪25 by prior arrangement, paid in advance through the Arbox link; deducted from the membership if the trainee signs up that same week. A trial without prior arrangement: ₪50. Discounts for reservists, soldiers and security forces: ask at the desk.
   - Standing order on a credit card, charged from the sign-up date a month ahead. Cash / Bit / PayBox: paid in advance for the next two months.
   - All members may come to open mat (Fridays and as announced in the WhatsApp group). Morning classes only by arrangement in the "אימוני בוקר" group.
   - No classes on Pesach, Shavuot and Sukkot (including Chol HaMoed), Memorial Day and Independence Day, 2 days of Chanukah, and Purim day.
