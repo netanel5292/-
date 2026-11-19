@@ -45,7 +45,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Start capital ₪160,000 (₪119,800 of it family loans). About ₪39,000 left after November; Oct and Nov had a rent grace of ₪14,180 each.
   - By the Excel numbers, break-even is about 78 trainees (the dashboard keeps 88 as a safety margin). At ₪6,000 + VAT rent it drops to about 52.
 - **Break-even:** 88 registered trainees. **Big goal:** at least 110.
-- **Bank:** business account at Mizrahi Tefahot. On 18 Nov the owner signed up for "מזרחי-טפחות בזמן אמת" (email + SMS). The morning task (07:45 Sun–Thu) searches Gmail for the bank email, writes `finance/bank` {date, balance, card[], note} (the finance tab starts its forecast from that balance), and emails the owner a short summary with observations and what it added. Never ask for bank passwords.
+- **Bank:** business account at Mizrahi Tefahot. On 18 Nov the owner signed up for "מזרחי-טפחות בזמן אמת" (email + SMS). The morning task (07:45 Sun–Thu) searches Gmail for the bank email, writes `finance/bank` {date, balance, card[], note} (the finance tab starts its forecast from that balance), and emails the owner a short summary with observations and what it added. Never ask for bank passwords. 19 Nov: balance ₪32,465 (books, 18 Nov), credit line ₪10,000 unused. The ₪18,000 arnona debt was paid by business credit card in 3 charges of ₪6,000 (Dec, Jan, Feb), stored in `finance/bank.card` and deducted in the forecast; with them, staying in the mall runs out of cash around March 2027.
 - **What the owner is trying now:** automations, more advertising, and partnerships. The open question is whether these bring a real return, or whether the studio needs to move or change course.
 
 ## How to help
