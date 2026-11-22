@@ -42,9 +42,21 @@ aside.card{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
 .f input,.f select{width:104px;font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-variant-numeric:tabular-nums}
 .hint{font-size:12px;color:var(--muted);margin:2px 0 0}
 .fs.in,.fs.out{border-right:3px solid;padding-right:10px}.fs.in{border-color:var(--money)}.fs.out{border-color:var(--need)}
+.f.key{background:var(--money-soft);border-radius:10px;padding:8px 10px;margin:4px 0}.f.key label{font-weight:700;color:var(--money)}.f.key input{font-weight:700;border:2px solid var(--money)}
+.xr{border:1px solid var(--line);border-radius:10px;padding:8px;margin:6px 0;display:grid;gap:6px}.xr .r{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.xr input,.xr select{font:inherit;font-size:13px;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg)}.xr .nm{width:100%}.xr .am{width:80px}
+.xr button{margin-inline-start:auto;border:0;background:var(--bad-soft);color:var(--bad);border-radius:6px;padding:3px 9px;cursor:pointer;font:inherit}
+.addx{width:100%;border:1.5px dashed var(--need);background:transparent;color:var(--need);border-radius:8px;padding:7px;font:inherit;font-weight:700;cursor:pointer;margin-top:6px}
+.ledger{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}@media (max-width:700px){.ledger{grid-template-columns:minmax(0,1fr)}}
+.col h3{margin:0 0 4px;font-size:16px}.col.in h3{color:var(--money)}.col.out h3{color:var(--need)}
+.ln{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 10px;padding:7px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.ln small{grid-column:1;color:var(--muted);font-size:12px}.ln b{grid-row:1;grid-column:2}.col.in .ln b{color:var(--money)}.col.out .ln b{color:var(--need)}
+.ln.tot{border-bottom:0;border-top:2px solid var(--fg);font-weight:700;font-size:17px;margin-top:2px}
+.bottom{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:14px;padding:12px 14px;border-radius:10px;background:var(--bg)}.bottom div{display:flex;flex-direction:column}
+.bottom b{font-family:var(--display);font-weight:400;font-size:26px;font-variant-numeric:tabular-nums}.bottom span{font-size:13px;color:var(--muted)}
 .fs.in legend{color:var(--money)}.fs.out legend{color:var(--need)}
 #eff{color:var(--money);font-weight:700;font-size:13px}
-td.inn{color:var(--money);font-weight:700}td.need{color:var(--need)}td.sm{font-size:13px;color:var(--muted)}th.in{color:var(--money)}th.out{color:var(--need)}
+td.inn{color:var(--money);font-weight:700;white-space:nowrap}td.need{color:var(--need);white-space:nowrap}td.sm{font-size:13px;color:var(--muted)}th.in{color:var(--money)}th.out{color:var(--need)}
 main{display:flex;flex-direction:column;gap:18px;min-width:0}
 .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 @media (max-width:700px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -108,7 +120,8 @@ tr.heavy td.need{color:var(--bad);font-weight:700}
       <fieldset class="fs in"><legend>הכנסות</legend>
         <div class="f"><label for="start">יש כבר בבנק (עו״ש)</label><input id="start" type="number" step="500"></div>
         <div class="f"><label for="save">חיסכון בחודש (מנוחה בשני)</label><input id="save" type="number" step="250"></div>
-        <div class="f"><label for="inc">תוספת כשעובד בשני, בחודש</label><input id="inc" type="number" step="250"></div>
+        <div class="f key"><label for="inc">תוספת לחיסכון כשעובד בשני (בחודש)</label><input id="inc" type="number" step="250"></div>
+        <p class="hint">זו השורה למלא אם אתה עובד ביום שני. היא נכנסת לחשבון כשלוחצים "עובד בשני".</p>
         <div class="f"><label for="jm">חודשים שעובד בשני</label><input id="jm" type="number" min="0" max="13"></div>
         <p id="eff"></p>
       </fieldset>
@@ -125,6 +138,8 @@ tr.heavy td.need{color:var(--bad);font-weight:700}
         <div class="f"><label for="promo">קידום ממומן, לשיר</label><input id="promo" type="number" step="250"></div>
         <div class="f"><label for="dist">הפצה לספוטיפיי</label><input id="dist" type="number" step="100"></div>
         <div class="f"><label for="show">הכנה להופעה</label><input id="show" type="number" step="1000"></div>
+        <div id="extras"></div>
+        <button type="button" class="addx" id="addx">+ הוספת שורת הוצאה (למשל נסיעות)</button>
       </fieldset>
       <fieldset class="fs"><legend>ביטחון</legend>
         <div class="f"><label for="buf">ריזיקה על ההוצאות %</label><input id="buf" type="number" step="1"></div>
@@ -144,13 +159,17 @@ tr.heavy td.need{color:var(--bad);font-weight:700}
         </div>
       </section>
 
-      <section class="card" aria-label="כמה אני משקיע">
-        <h2>כמה אני משקיע בפרויקט</h2>
-        <div class="sum">
-          <div><b id="s-tot" style="color:var(--need)"></b><span id="s-tot-l"></span></div><span class="op">−</span>
-          <div><b id="s-grant" style="color:var(--money)"></b><span>מפעל הפיס</span></div><span class="op">=</span>
-          <div><b id="s-mine" style="color:var(--accent)"></b><span>מהכיס שלך בסוף</span></div>
-          <div><b id="s-bridge"></b><span id="s-bridge-l"></span></div>
+      <section class="card" aria-label="החשבון">
+        <h2>החשבון: מה נכנס ומה יוצא עד ההופעה</h2>
+        <p class="sub" style="margin:0 0 10px">מדצמבר 26 עד סוף דצמבר 27. כל שורה כאן מתעדכנת לפי הנתונים בצד.</p>
+        <div class="ledger">
+          <div class="col in"><h3>הכנסות</h3><div id="L-in"></div></div>
+          <div class="col out"><h3>הוצאות</h3><div id="L-out"></div></div>
+        </div>
+        <div class="bottom">
+          <div><b id="s-left"></b><span>נשאר אחרי ההופעה (הכנסות פחות הוצאות)</span></div>
+          <div><b id="s-mine" style="color:var(--accent)"></b><span>מהכיס שלך (הוצאות פחות מפעל הפיס)</span></div>
+          <div><b id="s-bridge"></b><span>יוצא מהחיסכון עד אוקטובר (לפני פעימה 2)</span></div>
         </div>
       </section>
 
@@ -217,18 +236,22 @@ tr.heavy td.need{color:var(--bad);font-weight:700}
 var M=['דצמ 26','ינו 27','פבר 27','מרץ 27','אפר 27','מאי 27','יונ 27','יול 27','אוג 27','ספט 27','אוק 27','נוב 27','דצמ 27','ינו 28'];
 var PROD=[1,3,5,7,8], RADIO=[[4,5],[7,8],[9,10]], SOC=[2,10], DISTM=4, DEAD=11;
 var DEF={job:0,save:7000,start:5000,inc:6000,jm:10,ga1:24000,gm1:2,ga2:24000,gm2:11,prod:18000,social:14000,radio:6000,promo:2000,dist:300,show:0,buf:12,cush:10000};
-var KEY='songs-budget-v1', d=Object.assign({},DEF);
+function fresh(){var o=Object.assign({},DEF);o.extra=[];return o}
+var KEY='songs-budget-v1', d=fresh();
 try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv)d=Object.assign(d,sv)}catch(e){}
+if(!Array.isArray(d.extra))d.extra=[];
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function $(i){return document.getElementById(i)}
 function f(n){n=Math.round(n);return (n<0?'−':'')+'₪'+Math.abs(n).toLocaleString('en-US')}
 function kk(n){return (n<0?'−':'')+'₪'+Math.round(Math.abs(n)/1000)+'K'}
-function spend(i){ // raw expense in month i, with parts
-  var e=0,p=[];
-  var pi=PROD.indexOf(i); if(pi>=0){e+=d.prod/5;p.push('הפקה שיר '+(pi+1))}
-  if(i>=SOC[0]&&i<=SOC[1]){e+=d.social/(SOC[1]-SOC[0]+1);p.push('סושיאל')}
-  RADIO.forEach(function(r,k){if(r.indexOf(i)>=0){e+=(+d.radio+ +d.promo)/2;p.push('רדיו + קידום שיר '+(k+1))}});
-  if(i==DISTM){e+=+d.dist;p.push('הפצה')}
-  if(i==11||i==12){e+=d.show/2;if(+d.show)p.push('הכנה להופעה')}
+function spend(i){ // raw expense in month i, with parts {k,x,v}
+  var e=0,p=[];function add(k,x,v){if(v){e+=v;p.push({k:k,x:x,v:v})}}
+  var pi=PROD.indexOf(i); if(pi>=0)add('prod','הפקה שיר '+(pi+1),d.prod/5);
+  if(i>=SOC[0]&&i<=SOC[1])add('social','סושיאל',d.social/(SOC[1]-SOC[0]+1));
+  RADIO.forEach(function(r,k){if(r.indexOf(i)>=0){add('radio','רדיו שיר '+(k+1),d.radio/2);add('promo','קידום שיר '+(k+1),d.promo/2)}});
+  if(i==DISTM)add('dist','הפצה',+d.dist);
+  if(i==11||i==12)add('show','הכנה להופעה',d.show/2);
+  d.extra.forEach(function(x,j){if(i>=+x.m1&&i<=+x.m2)add('x'+j,x.n||'הוצאה נוספת',+x.a||0)});
   return {e:e,p:p};
 }
 function sim(s,buf,job){ // cumulative money & need at points 0..14
@@ -267,16 +290,29 @@ function render(){
   else $('t-min').parentNode.querySelector('.ex').textContent='בלי ריזיקה ובלי כרית: בלי מרווח טעות.';
 
   var me=sim(+d.save,+d.buf,d.job), rec=sim(sRec||0,+d.buf,0);
-  var tot=me.n[DEAD], grant=(+d.ga1)+(+d.ga2), g1=(+d.gm1<DEAD?+d.ga1:0)+(+d.gm2<DEAD?+d.ga2:0);
-  $('s-tot').textContent=f(me.n[14]);$('s-tot-l').textContent='סך ההוצאות (כולל '+d.buf+'% ריזיקה)';
-  $('s-grant').textContent=f(grant);$('s-mine').textContent=f(Math.max(0,me.n[14]-grant));
-  $('s-bridge').textContent=f(Math.max(0,tot-g1));$('s-bridge-l').textContent='צריך להוציא מהחיסכון עד אוקטובר (לפני פעימה 2)';
+  var END=13,kb=1+d.buf/100,cat={},order=[],LBL={prod:'הפקת 5 השירים',social:'איש סושיאל',radio:'שליחה לרדיו (3 שירים)',promo:'קידום ממומן (3 שירים)',dist:'הפצה לספוטיפיי',show:'הכנה להופעה'};
+  for(var i=0;i<END;i++)spend(i).p.forEach(function(o){if(!cat[o.k]){cat[o.k]={v:0,m:[]};order.push(o.k)}cat[o.k].v+=o.v;if(cat[o.k].m.indexOf(i)<0)cat[o.k].m.push(i)});
+  var when=function(ms){return ms.length==1?M[ms[0]]:M[ms[0]].split(' ')[0]+'–'+M[ms[ms.length-1]]};
+  var raw=0,ho='';order.forEach(function(key){var c=cat[key],nm=LBL[key]||((d.extra[+key.slice(1)]||{}).n)||'הוצאה נוספת';raw+=c.v;ho+='<div class="ln"><span>'+esc(nm)+'</span><b>−'+f(c.v)+'</b><small>'+when(c.m)+'</small></div>'});
+  var risk=raw*(kb-1);ho+='<div class="ln"><span>ריזיקה '+d.buf+'%</span><b>−'+f(risk)+'</b><small>מרווח לחריגות</small></div><div class="ln tot"><span>סך ההוצאות</span><b>−'+f(raw+risk)+'</b></div>';
+  var jobM=d.job?Math.max(0,Math.min(+d.jm,END-1)):0,hi='',inTot=0;
+  var li=function(n,v,s){inTot+=v;hi+='<div class="ln"><span>'+n+'</span><b>+'+f(v)+'</b><small>'+s+'</small></div>'};
+  li('יש כבר בבנק (עו״ש)',+d.start,'היום');
+  li('חיסכון חודשי',d.save*END,f(d.save)+' × '+END+' חודשים');
+  if(jobM)li('עבודה ביום שני',d.inc*jobM,f(d.inc)+' × '+jobM+' חודשים');
+  if(+d.gm1<END)li('מפעל הפיס, פעימה 1',+d.ga1,M[+d.gm1]);
+  if(+d.gm2<END)li('מפעל הפיס, פעימה 2',+d.ga2,M[+d.gm2]);
+  hi+='<div class="ln tot"><span>סך ההכנסות</span><b>+'+f(inTot)+'</b></div>';
+  $('L-in').innerHTML=hi;$('L-out').innerHTML=ho;
+  var grant=(+d.ga1)+(+d.ga2),g1=(+d.gm1<DEAD?+d.ga1:0)+(+d.gm2<DEAD?+d.ga2:0),left=inTot-raw-risk;
+  var sl=$('s-left');sl.textContent=f(left);sl.style.color=left<0?'var(--bad)':'var(--money)';
+  $('s-mine').textContent=f(Math.max(0,raw+risk-grant));$('s-bridge').textContent=f(Math.max(0,me.n[DEAD]-g1));
 
   // checkpoints
   var CK=[{p:3,t:'3 חודשים'},{p:5,t:'5 חודשים'},{p:8,t:'8 חודשים'},{p:11,t:'הדדליין'},{p:13,t:'אחרי ההופעה'}];
-  var h='';CK.forEach(function(ck,j){var paid=[];for(var i=0;i<ck.p;i++)spend(i).p.forEach(function(x){if(x.indexOf('הפקה')==0||x.indexOf('רדיו')==0){var short=x.replace('רדיו + קידום ','רדיו ');if(paid.indexOf(short)<0)paid.push(short)}});
+  var h='';CK.forEach(function(ck,j){var np=PROD.filter(function(m){return m<ck.p}).length,nr=RADIO.filter(function(r){return r[0]<ck.p}).length;
+    var pd=np?np+' הפקות'+(nr?', '+nr+' רדיו':''):'עוד כלום';
     var target=rec.a[ck.p]-rec.n[ck.p],mine=me.a[ck.p]-me.n[ck.p],ok=mine>=target;
-    var pd=paid.length?paid.filter(function(x){return x.indexOf('הפקה')==0}).length+' הפקות'+(paid.some(function(x){return x.indexOf('רדיו')==0})?', '+paid.filter(function(x){return x.indexOf('רדיו')==0}).length+' רדיו':''):'עוד כלום';
     ck.target=target;
     h+='<tr><td><span class="ck">'+(j+1)+'</span>סוף '+M[ck.p-1]+'<div class="hint">'+ck.t+'</div></td><td>'+pd+'</td><td><b>'+f(target)+'</b></td><td>'+f(mine)+'</td><td><span class="chip '+(ok?'ok':'no')+'">'+(ok?'בכיוון':'חסר '+f(target-mine))+'</span></td></tr>'});
   $('ck').innerHTML=h;
@@ -290,6 +326,7 @@ function render(){
   ev.push({i:+d.gm2,c:'t-grant',g:'פיס',x:'פעימה 2 ממפעל הפיס: +'+f(d.ga2)});
   ev.push({i:10,c:'t-flag',g:'דדליין',x:'הכול משולם. מכאן רק הכנה להופעה'});
   ev.push({i:12,c:'t-flag',g:'הופעה',x:'ההופעה'});
+  d.extra.forEach(function(x){ev.push({i:+x.m1,c:'t-prod',g:'הוצאה',x:esc(x.n||'הוצאה נוספת')+' (−'+f(x.a)+(+x.m2>+x.m1?' בחודש, עד '+M[+x.m2]:'')+')'})});
   CK.forEach(function(ck,j){ev.push({i:ck.p-1,c:'t-flag',g:'בדיקה '+(j+1),x:'יעד בחשבון: '+f(ck.target),ck:1})});
   ev.sort(function(a,b){return a.i-b.i||(a.ck||0)-(b.ck||0)});
   $('tl').innerHTML=ev.map(function(e){return '<li><span class="m">'+M[e.i]+'</span><span><span class="tag '+e.c+'">'+e.g+'</span>'+e.x+'</span></li>'}).join('');
@@ -297,7 +334,7 @@ function render(){
   // month table
   var t='';for(var i=0;i<14;i++){var sp=spend(i),ex=sp.e*(1+d.buf/100),bal=me.a[i+1]-me.n[i+1];var inc=+d.save+(d.job&&i>=1&&i<1+(+d.jm)?+d.inc:0);
     var ip=['חיסכון'+(d.job&&i>=1&&i<1+(+d.jm)?' + עבודה בשני':'')],gin=0;if(i==+d.gm1){gin+=+d.ga1;ip.push('מפעל הפיס 1')}if(i==+d.gm2){gin+=+d.ga2;ip.push('מפעל הפיס 2')}
-    t+='<tr class="'+(ex>inc?'heavy':'')+'"><td><b>'+M[i]+'</b></td><td class="inn">+'+f(inc+gin)+'</td><td class="sm">'+ip.join(', ')+'</td><td class="need">'+(ex?'−'+f(ex):'—')+'</td><td class="sm">'+(sp.p.join(', ')||'—')+'</td><td style="color:var('+(bal<0?'--bad':'--fg')+')"><b>'+f(bal)+'</b></td></tr>'}
+    t+='<tr class="'+(ex>inc?'heavy':'')+'"><td><b>'+M[i]+'</b></td><td class="inn">+'+f(inc+gin)+'</td><td class="sm">'+ip.join(', ')+'</td><td class="need">'+(ex?'−'+f(ex):'—')+'</td><td class="sm">'+(sp.p.map(function(o){return esc(o.x)+' '+f(o.v*(1+d.buf/100))}).join(' · ')||'—')+'</td><td style="color:var('+(bal<0?'--bad':'--fg')+')"><b>'+f(bal)+'</b></td></tr>'}
   $('mt').innerHTML=t;
 
   // chart
@@ -333,7 +370,14 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
 FIELDS.forEach(function(k){$(k).addEventListener('change',function(){d[k]=+this.value||0;save();render()})});
 $('b-rest').addEventListener('click',function(){d.job=0;save();render()});
 $('b-job').addEventListener('click',function(){d.job=1;save();render()});
-$('reset').addEventListener('click',function(){d=Object.assign({},DEF);save();render()});
+$('reset').addEventListener('click',function(){d=fresh();drawX();save();render()});
+function drawX(){var h='';d.extra.forEach(function(x,j){var o1='',o2='';for(var i=0;i<13;i++){o1+='<option value="'+i+'"'+(i==+x.m1?' selected':'')+'>'+M[i]+'</option>';o2+='<option value="'+i+'"'+(i==+x.m2?' selected':'')+'>'+M[i]+'</option>'}
+  h+='<div class="xr" data-j="'+j+'"><input class="nm" id="xn'+j+'" data-k="n" placeholder="שם ההוצאה, למשל נסיעות" aria-label="שם ההוצאה" value="'+esc(x.n||'')+'"><div class="r"><input class="am" id="xa'+j+'" data-k="a" type="number" step="100" value="'+(+x.a||0)+'" aria-label="סכום לחודש"><span class="hint">₪ בחודש, מ־</span><select id="xm1'+j+'" data-k="m1" aria-label="מחודש">'+o1+'</select><span class="hint">עד</span><select id="xm2'+j+'" data-k="m2" aria-label="עד חודש">'+o2+'</select><button type="button" data-del="'+j+'" aria-label="מחיקת השורה">✕</button></div></div>'});
+  $('extras').innerHTML=h}
+$('extras').addEventListener('change',function(e){var t=e.target,row=t.closest('.xr');if(!row||!t.dataset.k)return;var x=d.extra[+row.dataset.j];x[t.dataset.k]=t.dataset.k=='n'?t.value:(+t.value||0);if(+x.m2<+x.m1){x.m2=x.m1;drawX()}save();render()});
+$('extras').addEventListener('click',function(e){var b=e.target.closest('[data-del]');if(!b)return;d.extra.splice(+b.dataset.del,1);drawX();save();render()});
+$('addx').addEventListener('click',function(){d.extra.push({n:'',a:500,m1:1,m2:10});drawX();save();render();var el=$('xn'+(d.extra.length-1));if(el)el.focus()});
+drawX();
 if(window.matchMedia)try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render)}catch(e){}
 new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 render();
