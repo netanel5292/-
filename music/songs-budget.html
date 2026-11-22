@@ -1,0 +1,332 @@
+<title>תקציב 5 השירים</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Secular+One&display=swap">
+<style>
+/* Layout: sticky settings sidebar on the right (RTL), answer tiles → chart with milestones → checkpoints → month table → notes */
+:root{
+  --bg:#f4f5f9; --panel:#ffffff; --fg:#151a26; --muted:#5d6475; --line:#e2e5ee;
+  --accent:#2f5bea; --accent-soft:#e7edff;
+  --money:#12805a; --money-soft:#d9f2e7; --need:#6a46d6; --need-soft:#ece6ff;
+  --target:#b7791f; --bad:#c0362c; --bad-soft:#fde3e0; --good:#12805a;
+  --display:'Secular One','Heebo',system-ui,sans-serif; --body:'Heebo',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10131b; --panel:#181c27; --fg:#eceef4; --muted:#9aa1b3; --line:#2a3040;
+  --accent:#7c9bff; --accent-soft:#232c4a; --money:#3cc58f; --money-soft:#173328; --need:#a68bff; --need-soft:#2a2346;
+  --target:#e0a64a; --bad:#ff7a6e; --bad-soft:#3a1f1d; --good:#3cc58f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10131b; --panel:#181c27; --fg:#eceef4; --muted:#9aa1b3; --line:#2a3040;
+  --accent:#7c9bff; --accent-soft:#232c4a; --money:#3cc58f; --money-soft:#173328; --need:#a68bff; --need-soft:#2a2346;
+  --target:#e0a64a; --bad:#ff7a6e; --bad-soft:#3a1f1d; --good:#3cc58f; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;direction:rtl}
+.wrap{max-width:1280px;margin:0 auto;padding-block:20px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(26px,4vw,36px);margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-weight:400;font-size:20px;margin:0 0 4px}
+.sub{color:var(--muted);margin:2px 0 0}
+.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:18px}
+.seg{display:inline-flex;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px;gap:3px}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-weight:500;padding:7px 14px;border-radius:8px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.seg button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.grid{display:grid;grid-template-columns:290px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+aside.card{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+@media (max-width:900px){aside.card{position:static}}
+.fs{border:0;margin:0 0 14px;padding:0}
+.fs legend{font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.02em;margin-bottom:6px}
+.f{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:4px 0}
+.f label{font-size:14px}
+.f input,.f select{width:104px;font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-variant-numeric:tabular-nums}
+.hint{font-size:12px;color:var(--muted);margin:2px 0 0}
+main{display:flex;flex-direction:column;gap:18px;min-width:0}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:700px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.tile .lab{font-size:13px;color:var(--muted);font-weight:500}
+.tile .num{font-family:var(--display);font-size:clamp(24px,3vw,32px);font-variant-numeric:tabular-nums;line-height:1.2}
+.tile .ex{font-size:12px;color:var(--muted)}
+.tile.rec{border-color:var(--accent);background:var(--accent-soft)}
+.tile.mine .num{color:var(--accent)}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;margin-top:4px;align-self:flex-start}
+.chip.ok{background:var(--money-soft);color:var(--good)}.chip.no{background:var(--bad-soft);color:var(--bad)}
+.sum{display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline}
+.sum div{display:flex;flex-direction:column}
+.sum b{font-family:var(--display);font-weight:400;font-size:24px;font-variant-numeric:tabular-nums}
+.sum span{font-size:13px;color:var(--muted)}
+.sum .op{font-size:22px;color:var(--muted)}
+.chartbox{overflow-x:auto;margin-top:8px}
+.chartbox svg{display:block;min-width:640px;width:100%;height:auto;direction:ltr}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-left:6px}
+.two{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px}
+@media (max-width:1050px){.two{grid-template-columns:minmax(0,1fr)}}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th{text-align:right;font-size:12px;color:var(--muted);font-weight:500;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.heavy td.need{color:var(--bad);font-weight:700}
+.ck{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--target);color:#fff;font-size:12px;font-weight:700;margin-left:6px}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.tl li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.tl .m{font-weight:700;color:var(--muted);font-size:13px}
+.tl .tag{font-size:11px;font-weight:700;padding:1px 7px;border-radius:99px;margin-left:6px}
+.t-grant{background:var(--money-soft);color:var(--good)}.t-radio{background:var(--need-soft);color:var(--need)}.t-prod{background:var(--accent-soft);color:var(--accent)}.t-flag{background:var(--bad-soft);color:var(--bad)}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px;margin:8px 0 0;padding:0;list-style:none}
+@media (max-width:700px){.notes{grid-template-columns:minmax(0,1fr)}}
+.notes li{padding:10px 0;border-top:1px solid var(--line)}
+.notes b{display:block}
+.q li b{color:var(--target)}
+.foot{font-size:13px;color:var(--muted)}
+.foot a{color:var(--accent)}
+.verdict{font-size:15px;margin:8px 0 0;padding:10px 12px;border-radius:10px;background:var(--bg)}
+@media (prefers-reduced-motion:no-preference){.chartbox path{transition:d .3s}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>תקציב 5 השירים: עד ההופעה בדצמבר 27</h1>
+      <p class="sub">כמה צריך לחסוך בכל חודש, מה הצורך המצטבר, ומתי לבדוק שאתה בכיוון.</p>
+    </div>
+    <div class="seg" role="group" aria-label="היום הנוסף בשבוע">
+      <button type="button" id="b-rest" aria-pressed="true">יום מנוחה</button>
+      <button type="button" id="b-job" aria-pressed="false">יום עבודה נוסף</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <aside class="card" aria-label="הנתונים">
+      <h2>הנתונים שלך</h2>
+      <p class="hint" style="margin-bottom:12px">שנה מספר והכול מתעדכן. נשמר בדפדפן שלך.</p>
+      <fieldset class="fs"><legend>הכנסות</legend>
+        <div class="f"><label for="save">חיסכון בחודש</label><input id="save" type="number" step="250"></div>
+        <div class="f"><label for="start">יש כבר בחיסכון</label><input id="start" type="number" step="500"></div>
+        <div class="f"><label for="inc">היום הנוסף, בחודש</label><input id="inc" type="number" step="250"></div>
+        <div class="f"><label for="jm">חודשים ביום הנוסף</label><input id="jm" type="number" min="0" max="13"></div>
+      </fieldset>
+      <fieldset class="fs"><legend>מפעל הפיס</legend>
+        <div class="f"><label for="ga1">פעימה 1 ₪</label><input id="ga1" type="number" step="1000"></div>
+        <div class="f"><label for="gm1">נכנסת ב־</label><select id="gm1"></select></div>
+        <div class="f"><label for="ga2">פעימה 2 ₪</label><input id="ga2" type="number" step="1000"></div>
+        <div class="f"><label for="gm2">נכנסת ב־</label><select id="gm2"></select></div>
+      </fieldset>
+      <fieldset class="fs"><legend>הוצאות הפרויקט</legend>
+        <div class="f"><label for="prod">הפקה, 5 שירים</label><input id="prod" type="number" step="500"></div>
+        <div class="f"><label for="social">איש סושיאל</label><input id="social" type="number" step="500"></div>
+        <div class="f"><label for="radio">רדיו, לשיר</label><input id="radio" type="number" step="500"></div>
+        <div class="f"><label for="promo">קידום ממומן, לשיר</label><input id="promo" type="number" step="250"></div>
+        <div class="f"><label for="dist">הפצה לספוטיפיי</label><input id="dist" type="number" step="100"></div>
+        <div class="f"><label for="show">הכנה להופעה</label><input id="show" type="number" step="1000"></div>
+      </fieldset>
+      <fieldset class="fs"><legend>ביטחון</legend>
+        <div class="f"><label for="buf">ריזיקה על ההוצאות %</label><input id="buf" type="number" step="1"></div>
+        <div class="f"><label for="cush">כרית קבועה בחשבון</label><input id="cush" type="number" step="1000"></div>
+        <p class="hint">"מומלץ" = ריזיקה + כרית שלא יורדים ממנה אף פעם.</p>
+      </fieldset>
+      <button type="button" id="reset" class="seg" style="padding:6px 12px;cursor:pointer;color:var(--muted);font:inherit;font-size:13px">חזרה למספרים שסיכמנו</button>
+    </aside>
+
+    <main>
+      <section aria-label="כמה לחסוך">
+        <div class="tiles">
+          <div class="tile"><span class="lab">מינימום בחודש</span><span class="num" id="t-min"></span><span class="ex">בלי ריזיקה ובלי כרית: בלי מרווח טעות.</span></div>
+          <div class="tile"><span class="lab" id="l-risk">עם ריזיקה</span><span class="num" id="t-risk"></span><span class="ex">מכסה חריגה בהוצאות</span></div>
+          <div class="tile rec"><span class="lab">מומלץ בחודש</span><span class="num" id="t-rec"></span><span class="ex" id="e-rec"></span></div>
+          <div class="tile mine"><span class="lab">מה שתכננת</span><span class="num" id="t-mine"></span><span class="chip" id="c-mine"></span></div>
+        </div>
+      </section>
+
+      <section class="card" aria-label="כמה אני משקיע">
+        <h2>כמה אני משקיע בפרויקט</h2>
+        <div class="sum">
+          <div><b id="s-tot"></b><span id="s-tot-l"></span></div><span class="op">−</span>
+          <div><b id="s-grant"></b><span>מפעל הפיס</span></div><span class="op">=</span>
+          <div><b id="s-mine" style="color:var(--accent)"></b><span>מהכיס שלך בסוף</span></div>
+          <div><b id="s-bridge"></b><span id="s-bridge-l"></span></div>
+        </div>
+      </section>
+
+      <section class="card" aria-label="גרף">
+        <h2>הכסף שלך מול הצורך, מצטבר</h2>
+        <p class="sub" style="margin:0">כל עוד הקו הירוק מעל הסגול, יש כסף לכל הוצאה. הנקודות הכתומות הן נקודות הבדיקה.</p>
+        <div class="chartbox"><svg id="chart" viewBox="0 0 900 360" role="img" aria-label="גרף כסף מצטבר מול צורך מצטבר"></svg></div>
+        <div class="legend">
+          <span><i style="background:var(--money)"></i>הכסף שלך (לפי מה שתכננת)</span>
+          <span><i style="background:var(--need)"></i>הצורך המצטבר (עם ריזיקה)</span>
+          <span><i style="background:var(--target);height:2px"></i>איפה צריך להיות לפי "מומלץ"</span>
+        </div>
+        <p class="verdict" id="verdict"></p>
+      </section>
+
+      <div class="two">
+        <section class="card" aria-label="נקודות בדיקה">
+          <h2>נקודות בדיקה</h2>
+          <p class="sub" style="margin:0 0 6px">בכל נקודה כזו, תסתכל בחשבון ותשווה ליעד.</p>
+          <div class="tbl"><table>
+            <thead><tr><th>מתי</th><th>מה כבר שולם</th><th>יעד בחשבון</th><th>אצלך לפי התוכנית</th><th></th></tr></thead>
+            <tbody id="ck"></tbody>
+          </table></div>
+        </section>
+        <section class="card" aria-label="ציר זמן">
+          <h2>ציר הזמן</h2>
+          <ul class="tl" id="tl"></ul>
+        </section>
+      </div>
+
+      <section class="card" aria-label="חודש בחודש">
+        <h2>חודש בחודש</h2>
+        <div class="tbl"><table>
+          <thead><tr><th>חודש</th><th>מה יוצא</th><th>הוצאה החודש</th><th>צורך מצטבר</th><th>כסף מצטבר</th><th>נשאר בחשבון</th></tr></thead>
+          <tbody id="mt"></tbody>
+        </table></div>
+        <p class="hint">באדום: חודש שבו ההוצאה גדולה מהחיסכון החודשי. כל הסכומים כוללים את אחוז הריזיקה.</p>
+      </section>
+
+      <section class="card" aria-label="הערות">
+        <h2>הערות והמלצות</h2>
+        <ul class="notes">
+          <li><b>לא לבנות על פעימה 2 לפני אוקטובר.</b>היא מגיעה אחרי הדדליין, אז כל ההוצאות עד אוקטובר יוצאות מהחיסכון ומפעימה 1. פעימה 2 היא הכרית להופעה.</li>
+          <li><b>לבקש ממפעל הפיס תאריכים בכתב.</b>אם פעימה 1 מתעכבת אחרי מרץ, ההפקה של שיר 2 נופלת על החיסכון בלבד. בדוק בגרף: שנה את החודש בצד.</li>
+          <li><b>החודשים הכבדים: מאי, יולי, אוגוסט.</b>בכל אחד נופלים יחד הפקה, רדיו וקידום. אם אפשר, הזז הפקה של שיר אחד לחודש שקט (יוני).</li>
+          <li><b>קידום ממומן בהדרגה.</b>להתחיל ב־₪500 לשיר, לבדוק שבוע, ולהמשיך רק במה שמביא האזנות.</li>
+          <li><b>היום הנוסף: מנוחה.</b>אם אתה באמת חוסך את הסכום ה"מומלץ", לא צריך אותו. הוא שווה את זה רק אם החיסכון בפועל יורד מתחת למינימום.</li>
+          <li><b>חשבון נפרד לפרויקט.</b>להעביר את החיסכון החודשי בהוראת קבע לחשבון/פיקדון נפרד ביום שהמשכורת נכנסת. ככה בנקודות הבדיקה רואים מספר אחד ברור.</li>
+        </ul>
+        <h2 style="margin-top:18px">שאלות פתוחות</h2>
+        <ul class="notes q">
+          <li><b>החיסכון החודשי אחרי הסטודיו?</b>הסכום שאתה חוסך כבר לוקח בחשבון את ההפסד של הסטודיו (כ־₪6,000 בחודש)? זה המספר שהכי משנה את התוכנית.</li>
+          <li><b>פעימות מפעל הפיס חצי־חצי?</b>הנחתי ₪24,000 בפברואר ו־₪24,000 בנובמבר. אם זה אחרת, שנה בצד.</li>
+          <li><b>הכנה להופעה עולה כסף?</b>נגנים, חזרות, אולם. כרגע ₪0. מלא בצד כשתדע.</li>
+        </ul>
+        <p class="foot" style="margin-top:14px">הלוח המקורי: <a href="https://claude.ai/artifact/Hp11s7we1YRAH38CtUpeJF" target="_blank" rel="noopener">התוכנית בוויטבורד</a></p>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+(function(){
+var M=['דצמ 26','ינו 27','פבר 27','מרץ 27','אפר 27','מאי 27','יונ 27','יול 27','אוג 27','ספט 27','אוק 27','נוב 27','דצמ 27','ינו 28'];
+var PROD=[1,3,5,7,8], RADIO=[[4,5],[7,8],[9,10]], SOC=[2,10], DISTM=4, DEAD=11;
+var DEF={job:0,save:7000,start:5000,inc:6000,jm:10,ga1:24000,gm1:2,ga2:24000,gm2:11,prod:18000,social:14000,radio:6000,promo:2000,dist:300,show:0,buf:12,cush:10000};
+var KEY='songs-budget-v1', d=Object.assign({},DEF);
+try{var sv=JSON.parse(localStorage.getItem(KEY)||'null');if(sv)d=Object.assign(d,sv)}catch(e){}
+function $(i){return document.getElementById(i)}
+function f(n){n=Math.round(n);return (n<0?'−':'')+'₪'+Math.abs(n).toLocaleString('en-US')}
+function kk(n){return (n<0?'−':'')+'₪'+Math.round(Math.abs(n)/1000)+'K'}
+function spend(i){ // raw expense in month i, with parts
+  var e=0,p=[];
+  var pi=PROD.indexOf(i); if(pi>=0){e+=d.prod/5;p.push('הפקה שיר '+(pi+1))}
+  if(i>=SOC[0]&&i<=SOC[1]){e+=d.social/(SOC[1]-SOC[0]+1);p.push('סושיאל')}
+  RADIO.forEach(function(r,k){if(r.indexOf(i)>=0){e+=(+d.radio+ +d.promo)/2;p.push('רדיו + קידום שיר '+(k+1))}});
+  if(i==DISTM){e+=+d.dist;p.push('הפצה')}
+  if(i==11||i==12){e+=d.show/2;if(+d.show)p.push('הכנה להופעה')}
+  return {e:e,p:p};
+}
+function sim(s,buf){ // cumulative money & need at points 0..14
+  var k=1+buf/100,a=+d.start,n=0,A=[a],N=[0];
+  for(var i=0;i<14;i++){
+    a+=s; if(d.job&&i>=1&&i<1+(+d.jm))a+=+d.inc;
+    if(i==+d.gm1)a+=+d.ga1; if(i==+d.gm2)a+=+d.ga2;
+    n+=spend(i).e*k; A.push(a); N.push(n);
+  }
+  return {a:A,n:N};
+}
+function need(buf,cush){ // smallest monthly saving that never dips below cush
+  for(var s=0;s<=30000;s+=50){var r=sim(s,buf),ok=true;for(var i=1;i<15;i++)if(r.a[i]-r.n[i]<cush-0.5){ok=false;break}if(ok)return s}
+  return NaN;
+}
+var opts='';M.forEach(function(m,i){opts+='<option value="'+i+'">'+m+'</option>'});$('gm1').innerHTML=opts;$('gm2').innerHTML=opts;
+var FIELDS=['save','start','inc','jm','ga1','gm1','ga2','gm2','prod','social','radio','promo','dist','show','buf','cush'];
+function render(){
+  $('b-rest').setAttribute('aria-pressed',!d.job);$('b-job').setAttribute('aria-pressed',!!d.job);
+  FIELDS.forEach(function(k){var el=$(k);if(document.activeElement!==el)el.value=d[k]});
+  var sMin=need(0,0),sRisk=need(+d.buf,0),sRec=need(+d.buf,+d.cush);
+  var rnd=function(x){return isNaN(x)?NaN:Math.ceil(x/100)*100};
+  sMin=rnd(sMin);sRisk=rnd(sRisk);sRec=rnd(sRec);
+  $('t-min').textContent=isNaN(sMin)?'—':f(sMin);$('t-risk').textContent=isNaN(sRisk)?'—':f(sRisk);$('t-rec').textContent=isNaN(sRec)?'—':f(sRec);
+  $('l-risk').textContent='עם ריזיקה '+d.buf+'%';
+  $('e-rec').textContent='ריזיקה '+d.buf+'% + כרית '+f(d.cush)+' תמיד';
+  $('t-mine').textContent=f(d.save);
+  var c=$('c-mine');
+  if(d.save>=sRec){c.className='chip ok';c.textContent='מעל המומלץ ב־'+f(d.save-sRec)}
+  else if(d.save>=sMin){c.className='chip no';c.textContent='חסר '+f(sRec-d.save)+' למומלץ'}
+  else{c.className='chip no';c.textContent='מתחת למינימום!'}
+  if(d.job){$('t-min').parentNode.querySelector('.ex').textContent='כולל את היום הנוסף. בלי ריזיקה וכרית.'}
+  else $('t-min').parentNode.querySelector('.ex').textContent='בלי ריזיקה ובלי כרית: בלי מרווח טעות.';
+
+  var me=sim(+d.save,+d.buf), rec=sim(sRec||0,+d.buf);
+  var tot=me.n[DEAD], grant=(+d.ga1)+(+d.ga2), g1=(+d.gm1<DEAD?+d.ga1:0)+(+d.gm2<DEAD?+d.ga2:0);
+  $('s-tot').textContent=f(me.n[14]);$('s-tot-l').textContent='סך ההוצאות (כולל '+d.buf+'% ריזיקה)';
+  $('s-grant').textContent=f(grant);$('s-mine').textContent=f(Math.max(0,me.n[14]-grant));
+  $('s-bridge').textContent=f(Math.max(0,tot-g1));$('s-bridge-l').textContent='צריך להוציא מהחיסכון עד אוקטובר (לפני פעימה 2)';
+
+  // checkpoints
+  var CK=[{p:3,t:'3 חודשים'},{p:5,t:'5 חודשים'},{p:8,t:'8 חודשים'},{p:11,t:'הדדליין'},{p:13,t:'אחרי ההופעה'}];
+  var h='';CK.forEach(function(ck,j){var paid=[];for(var i=0;i<ck.p;i++)spend(i).p.forEach(function(x){if(x.indexOf('הפקה')==0||x.indexOf('רדיו')==0){var short=x.replace('רדיו + קידום ','רדיו ');if(paid.indexOf(short)<0)paid.push(short)}});
+    var target=rec.a[ck.p]-rec.n[ck.p],mine=me.a[ck.p]-me.n[ck.p],ok=mine>=target;
+    var pd=paid.length?paid.filter(function(x){return x.indexOf('הפקה')==0}).length+' הפקות'+(paid.some(function(x){return x.indexOf('רדיו')==0})?', '+paid.filter(function(x){return x.indexOf('רדיו')==0}).length+' רדיו':''):'עוד כלום';
+    ck.target=target;
+    h+='<tr><td><span class="ck">'+(j+1)+'</span>סוף '+M[ck.p-1]+'<div class="hint">'+ck.t+'</div></td><td>'+pd+'</td><td><b>'+f(target)+'</b></td><td>'+f(mine)+'</td><td><span class="chip '+(ok?'ok':'no')+'">'+(ok?'בכיוון':'חסר '+f(target-mine))+'</span></td></tr>'});
+  $('ck').innerHTML=h;
+
+  // timeline
+  var ev=[];
+  ev.push({i:0,c:'t-flag',g:'התחלה',x:'מתחילים להעביר '+f(d.save)+' לחיסכון כל חודש'});
+  PROD.forEach(function(m,k){ev.push({i:m,c:'t-prod',g:'הפקה',x:'הפקת שיר '+(k+1)+' ('+f(d.prod/5)+')'})});
+  RADIO.forEach(function(r,k){ev.push({i:r[0],c:'t-radio',g:'רדיו',x:'שיר '+(k+1)+' לרדיו + קידום ממומן, פרוס על '+M[r[0]].split(' ')[0]+'–'+M[r[1]].split(' ')[0]})});
+  ev.push({i:+d.gm1,c:'t-grant',g:'פיס',x:'פעימה 1 ממפעל הפיס: +'+f(d.ga1)});
+  ev.push({i:+d.gm2,c:'t-grant',g:'פיס',x:'פעימה 2 ממפעל הפיס: +'+f(d.ga2)});
+  ev.push({i:10,c:'t-flag',g:'דדליין',x:'הכול משולם. מכאן רק הכנה להופעה'});
+  ev.push({i:12,c:'t-flag',g:'הופעה',x:'ההופעה'});
+  CK.forEach(function(ck,j){ev.push({i:ck.p-1,c:'t-flag',g:'בדיקה '+(j+1),x:'יעד בחשבון: '+f(ck.target),ck:1})});
+  ev.sort(function(a,b){return a.i-b.i||(a.ck||0)-(b.ck||0)});
+  $('tl').innerHTML=ev.map(function(e){return '<li><span class="m">'+M[e.i]+'</span><span><span class="tag '+e.c+'">'+e.g+'</span>'+e.x+'</span></li>'}).join('');
+
+  // month table
+  var t='';for(var i=0;i<14;i++){var sp=spend(i),ex=sp.e*(1+d.buf/100),bal=me.a[i+1]-me.n[i+1];var inc=+d.save+(d.job&&i>=1&&i<1+(+d.jm)?+d.inc:0);
+    t+='<tr class="'+(ex>inc?'heavy':'')+'"><td><b>'+M[i]+'</b></td><td>'+(sp.p.join(', ')||'—')+'</td><td class="need">'+(ex?f(ex):'—')+'</td><td>'+f(me.n[i+1])+'</td><td>'+f(me.a[i+1])+'</td><td style="color:var('+(bal<0?'--bad':'--fg')+')"><b>'+f(bal)+'</b></td></tr>'}
+  $('mt').innerHTML=t;
+
+  // chart
+  var W=900,H=360,L=56,R=20,T=58,B=44,all=me.a.concat(me.n,rec.a,[0]),lo=Math.min.apply(null,all),hi=Math.max.apply(null,all);lo=Math.min(0,lo);hi=hi*1.06+1000;
+  var X=function(i){return L+i*(W-L-R)/14},Y=function(v){return T+(hi-v)*(H-T-B)/(hi-lo)};
+  var s='',cs=getComputedStyle(document.documentElement),col=function(n){return cs.getPropertyValue(n).trim()};
+  var cMoney=col('--money'),cNeed=col('--need'),cT=col('--target'),cMut=col('--muted'),cLine=col('--line'),cFg=col('--fg'),cBad=col('--bad'),cMs=col('--money-soft'),cBs=col('--bad-soft');
+  s+='<rect x="'+X(11)+'" y="'+T+'" width="'+(X(13)-X(11))+'" height="'+(H-T-B)+'" fill="'+col('--accent-soft')+'"/>';
+  for(var g=0;g<=4;g++){var v=lo+(hi-lo)*g/4;s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="'+cLine+'"/><text x="'+(L-8)+'" y="'+(Y(v)+4)+'" font-size="11" fill="'+cMut+'" text-anchor="end">'+kk(v)+'</text>'}
+  if(lo<0)s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(0)+'" y2="'+Y(0)+'" stroke="'+cFg+'"/>';
+  for(var i=0;i<14;i++){var a0=me.a[i],a1=me.a[i+1],n0=me.n[i],n1=me.n[i+1];s+='<polygon points="'+X(i)+','+Y(a0)+' '+X(i+1)+','+Y(a1)+' '+X(i+1)+','+Y(n1)+' '+X(i)+','+Y(n0)+'" fill="'+((a0<n0||a1<n1)?cBs:cMs)+'" opacity=".75"/>'}
+  // milestone flags on top
+  var flags=[{i:+d.gm1+1,t:'פיס 1',c:cMoney},{i:RADIO[0][0]+1,t:'רדיו 1',c:cNeed},{i:RADIO[1][0]+1,t:'רדיו 2',c:cNeed},{i:RADIO[2][0]+1,t:'רדיו 3',c:cNeed},{i:11,t:'דדליין',c:cBad},{i:+d.gm2+1,t:'פיס 2',c:cMoney},{i:13,t:'הופעה',c:cBad}];
+  flags.sort(function(a,b){return a.i-b.i});var lastX=-99,row=0;
+  flags.forEach(function(fl){var x=X(fl.i);row=(x-lastX<56)?1-row:0;lastX=x;var y=16+row*20;
+    s+='<line x1="'+x+'" x2="'+x+'" y1="'+(y+6)+'" y2="'+(H-B)+'" stroke="'+fl.c+'" stroke-dasharray="3 4" opacity=".7"/><rect x="'+(x-27)+'" y="'+(y-10)+'" width="54" height="18" rx="9" fill="'+fl.c+'"/><text x="'+x+'" y="'+(y+3)+'" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">'+fl.t+'</text>'});
+  var path=function(arr,c,w,da){var p='';arr.forEach(function(v,i){p+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1)});return '<path d="'+p+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round"'+(da?' stroke-dasharray="'+da+'"':'')+'/>'};
+  var tgt=rec.a.map(function(v,i){return me.n[i]+(v-rec.n[i])});
+  s+=path(tgt,cT,2,'6 5')+path(me.n,cNeed,3)+path(me.a,cMoney,3);
+  for(var i=0;i<15;i++){var lab=(i?'סוף '+M[i-1]:'היום')+': כסף '+f(me.a[i])+' · צורך '+f(me.n[i])+' · נשאר '+f(me.a[i]-me.n[i]);
+    s+='<circle cx="'+X(i)+'" cy="'+Y(me.a[i])+'" r="3.5" fill="'+cMoney+'"><title>'+lab+'</title></circle><circle cx="'+X(i)+'" cy="'+Y(me.n[i])+'" r="3.5" fill="'+cNeed+'"><title>'+lab+'</title></circle>';
+    s+='<text x="'+X(i)+'" y="'+(H-B+17)+'" font-size="11" fill="'+cMut+'" text-anchor="middle">'+(i?M[i-1].split(' ')[0]:'היום')+'</text>'}
+  s+='<text x="'+X(1)+'" y="'+(H-B+33)+'" font-size="11" fill="'+cMut+'" text-anchor="middle">2026</text><text x="'+X(2)+'" y="'+(H-B+33)+'" font-size="11" fill="'+cMut+'" text-anchor="middle">2027</text><text x="'+X(14)+'" y="'+(H-B+33)+'" font-size="11" fill="'+cMut+'" text-anchor="middle">2028</text>';
+  CK.forEach(function(ck,j){var x=X(ck.p),y=Y(tgt[ck.p]);s+='<circle cx="'+x+'" cy="'+y+'" r="10" fill="'+cT+'"><title>בדיקה '+(j+1)+': יעד '+f(ck.target)+'</title></circle><text x="'+x+'" y="'+(y+4)+'" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">'+(j+1)+'</text>'});
+  s+='<text x="'+(X(11)+6)+'" y="'+(Y(me.a[11])-8)+'" font-size="12" font-weight="700" fill="'+cMoney+'">'+f(me.a[11])+'</text><text x="'+(X(11)+6)+'" y="'+(Y(me.n[11])+16)+'" font-size="12" font-weight="700" fill="'+cNeed+'">'+f(me.n[11])+'</text>';
+  $('chart').innerHTML=s;
+
+  // verdict
+  var lowI=1;for(var i=1;i<15;i++)if(me.a[i]-me.n[i]<me.a[lowI]-me.n[lowI])lowI=i;var low=me.a[lowI]-me.n[lowI];
+  $('verdict').textContent=(low<0?'⚠️ בסוף '+M[lowI-1]+' הצורך עובר את הכסף ב־'+f(-low)+'. צריך לחסוך יותר, להזיז הוצאה, או לקחת את היום הנוסף.':'הכסף נשאר מעל הצורך כל הדרך. הרגע הכי צפוף: סוף '+M[lowI-1]+', עם '+f(low)+' בחשבון.')+' באוקטובר 27 נשארים לך '+f(me.a[11]-me.n[11])+'.';
+}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}}
+FIELDS.forEach(function(k){$(k).addEventListener('change',function(){d[k]=+this.value||0;save();render()})});
+$('b-rest').addEventListener('click',function(){d.job=0;save();render()});
+$('b-job').addEventListener('click',function(){d.job=1;save();render()});
+$('reset').addEventListener('click',function(){d=Object.assign({},DEF);save();render()});
+if(window.matchMedia)try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render)}catch(e){}
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+render();
+})();
+</script>
