@@ -28,7 +28,7 @@ td.e{background:rgba(255,255,255,.5);border-radius:3mm}
 .c .t{font-family:"Rubik",sans-serif;font-weight:800;font-size:13.5px;direction:ltr;text-align:right;font-variant-numeric:tabular-nums}
 .c .n{font-weight:800;font-size:14px;line-height:1.15}
 .c .n small{display:block;font-weight:600;font-size:10.5px;color:#5d6680}
-.kids{--c:#e8b92e}.bjj{--c:#1f4fd1}.box{--c:#d6332b}.thai{--c:#c2410c}.grap{--c:#1c8a4e}.morn{--c:#7c3aed}.open{--c:#0891b2}.misc{--c:#5d6680}
+.kids{--c:#e8b92e}.bjj{--c:#1f4fd1}.box{--c:#d6332b}.thai{--c:#c2410c}.grap{--c:#1c8a4e}.morn{--c:#7c3aed}.open{--c:#0891b2}.misc{--c:#5d6680}.cal{--c:#0d9488}.spar{--c:#9f1239}
 .kids .c{background:#fff8e1}
 .foot{position:relative;flex:none;display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid #141a2b;border-radius:4mm;padding:2.5mm 6mm;font-weight:700;font-size:13.5px}
 .foot small{color:#5d6680;font-weight:600}
@@ -41,7 +41,7 @@ table{border-spacing:1.5mm}
 .c .n{font-size:15px;position:relative;z-index:1;line-height:1.15}
 .c .n small{font-size:11.5px}
 .c::after{position:absolute;left:1.5mm;bottom:-1mm;font-size:30px;opacity:.16;line-height:1}
-.bjj .c::after{content:"🥋"}.box .c::after{content:"🥊"}.thai .c::after{content:"🦵"}.grap .c::after{content:"🤼"}.kids .c::after{content:"🧒"}.morn .c::after{content:"🌅"}.open .c::after{content:"🤸"}.misc .c::after{content:"✨"}
+.bjj .c::after{content:"🥋"}.box .c::after{content:"🥊"}.thai .c::after{content:"🦵"}.grap .c::after{content:"🤼"}.kids .c::after{content:"🧒"}.morn .c::after{content:"🌅"}.open .c::after{content:"🤸"}.misc .c::after{content:"✨"}.cal .c::after{content:"💪"}.spar .c::after{content:"⚔️"}
 .bjj .c{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 12%,#fff),#fff)}
 .box .c{background:linear-gradient(135deg,color-mix(in srgb,var(--c) 12%,#fff),#fff)}
 .thai .c{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 10%,#fff) 0 6px,#fff 6px 12px)}
@@ -62,7 +62,7 @@ td.slot{font-size:14px}
     <div><h1>🥋 לו״ז אימונים שבועי</h1><div class="sub">Jew Jitsu Ashkelon</div></div>
     <div class="legend">
       <span class="kids">🧒 ילדים</span><span class="bjj">🥋 ג׳יו-ג׳יטסו</span><span class="grap">🤼 היאבקות</span>
-      <span class="box">🥊 אגרוף</span><span class="thai">🦵 תאילנדי / MMA</span><span class="morn">🌅 בוקר</span><span class="open">🤸 מזרון פתוח</span>
+      <span class="box">🥊 אגרוף</span><span class="thai">🦵 תאילנדי / MMA</span><span class="morn">🌅 בוקר</span><span class="open">🤸 מזרון פתוח</span><span class="cal">💪 קליסטניקס</span><span class="spar">⚔️ ספארינג</span>
     </div>
   </header>
 
@@ -93,14 +93,14 @@ td.slot{font-size:14px}
         <td class="kids"><div class="c"><span class="t">16:00</span><span class="n">🧒 ג׳יו-ג׳יטסו ילדים</span></div></td>
         <td class="e"></td>
         <td class="kids"><div class="c"><span class="t">16:00</span><span class="n">🧒 ג׳יו-ג׳יטסו ילדים</span></div></td>
-        <td class="kids"><div class="c"><span class="t">16:00</span><span class="n">🧒 ג׳יו-ג׳יטסו ילדים</span></div></td>
+        <td class="kids"><div class="c new"><span class="badge">✨ חדש</span><span class="t">16:30</span><span class="n">🧒 אימון ילדים</span></div></td>
         <td class="e"></td>
       </tr>
       <tr>
         <td class="slot">17:00</td>
         <td class="e"></td>
         <td class="bjj"><div class="c"><span class="t">17:30–18:30</span><span class="n">🥋 ג׳יו-ג׳יטסו חליפה</span></div></td>
-        <td class="misc"><div class="c"><span class="t">17:00</span><span class="n">✨ אימון חדש<small>בקרוב</small></span></div></td>
+        <td class="cal"><div class="c new"><span class="badge">✨ חדש</span><span class="t">17:00</span><span class="n">💪 קליסטניקס</span></div></td>
         <td class="box"><div class="c"><span class="t">17:10–18:00</span><span class="n">🥊 אגרוף קלאסי<small>בסיס</small></span></div></td>
         <td class="e"></td><td class="e"></td>
       </tr>
@@ -123,10 +123,12 @@ td.slot{font-size:14px}
         <td class="e"></td>
       </tr>
       <tr>
-        <td class="slot">20:15</td>
-        <td class="e"></td>
+        <td class="slot">🌙<br>ערב</td>
+        <td class="spar"><div class="c new"><span class="badge">✨ חדש</span><span class="t">20:30</span><span class="n">⚔️ ערב ספארינג<small>בכפוף לנרשמים מראש</small></span></div></td>
         <td class="misc"><div class="c"><span class="t">20:15</span><span class="n">🌙 אימון ערב</span></div></td>
-        <td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td>
+        <td class="e"></td>
+        <td class="spar"><div class="c new"><span class="badge">✨ חדש</span><span class="t">20:00</span><span class="n">⚔️ ערב ספארינג<small>בכפוף לנרשמים מראש</small></span></div></td>
+        <td class="e"></td><td class="e"></td>
       </tr>
     </tbody>
   </table>
