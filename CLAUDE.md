@@ -37,7 +37,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Private training (BJJ, wrestling, Muay Thai, classic boxing, self-defense): ₪230 a single session; ₪205 a session in a prepaid 5-pack; ₪185 a session in a prepaid 10-pack.
   - Earlier note from the owner: most trainees pay ₪280.
 - **Space costs:** rent ₪12,000 + VAT a month (rises by ₪1,000 + VAT from 1 Dec 2026; the dashboard's "🔮 שנה קדימה" forecast includes it), public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
-- **Location:** Ashkelon. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
+- **Location:** Ashkelon, Lev Ashkelon mall (קניון לב אשקלון), top floor. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
 - **Finances:** the studio loses about ₪6,000 a month at present.
 - **Finances (from the owner's Excel, Nov 2026):** the dashboard tab "💰 כספים" (`finance/plan`, `finance/months`) holds the data; the owner marks expenses as paid and edits amounts there.
@@ -59,6 +59,11 @@ This is not a software project. There is no code, build, lint or test step. The 
 - Marketing content (posts, ads, reels scripts, landing pages) should speak to people in Ashkelon and nearby.
 - The owner likes it when Claude proposes in-between steps on its own (e.g. "check the zoning with the municipality first"): keep adding them as quick tasks or weekly projects.
 - Social media workflow: the owner drops photos/videos into the Google Drive folder "Jew Jitsu – מדיה לפרסום" (id 1AaGLIPz3T7jcP9WzLEN6BYxoiUZtbVXi; subfolder "קליסטניקס" 1j4DJIbuG3owcu8N4fvG-Jvyi4iNuKW9A). Claude reads them, designs the post and caption, and saves the result in "מוכן לפרסום" (1AE7Iu3c5h1U1ZPFw9SRTt13BQ8HPIoNT). There is no Instagram/TikTok connector, so the owner (or Meta Business Suite scheduling) does the actual posting.
+
+- Video editing workflow (23 Nov 2026): raw footage is in the Drive folder "מדיה לעריכה" (id 1DmcJ1sHVDvAYyjByEt18DSNutWtgkVKy, shared by link, 100+ clips; studio footage starts Dec 2025). The Drive connector downloads only files up to 10 MB. Larger ones: `curl -L "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`, which works only in the cloud environment "Jew Jitsu studio - Drive media" (allows the two Drive hosts). Edit with ffmpeg; render Hebrew captions as PNGs with Chromium (Rubik + Assistant fonts) so RTL is right.
+  - Trial-class reel: `video/trial-reel/` (A = action opening, B = direct-address opening, identical after 2.4 s, 21 s, 1080×1920; recipe in `edit/`). CTA: "שלחו לנו 'ניסיון' בהודעה"; location line "קניון לב אשקלון | קומה עליונה".
+  - Owner's rules: use kids' footage only when he has approved that clip for publishing; no prices, offers or promises he did not give; show only disciplines that are visible in the clips.
+  - `IMG_1398.MOV` is an already-edited promo with music and titles baked in: use its picture only (clean shots 7–24.5 s). Claude cannot hear audio, so ask the owner to listen once before posting.
 
 ## Where things stand (handoff, 19 Nov 2026)
 
