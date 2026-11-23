@@ -64,6 +64,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - Trial-class reel: `video/trial-reel/` (A = action opening, B = direct-address opening, identical after 2.4 s, 21 s, 1080×1920; recipe in `edit/`). CTA: "שלחו לנו 'ניסיון' בהודעה"; location line "קניון לב אשקלון | קומה עליונה".
   - Owner's rules: use kids' footage only when he has approved that clip for publishing; no prices, offers or promises he did not give; show only disciplines that are visible in the clips.
   - `IMG_1398.MOV` is an already-edited promo with music and titles baked in: use its picture only (clean shots 7–24.5 s). Claude cannot hear audio, so ask the owner to listen once before posting.
+  - Voice-over versions (`*-voice.mp4`, 21.9 s): the owner's speech lifted from `IMG_0998.MOV` (edited horizontal promo, he talks to camera; burned-in subtitles, and a faint music bed under the voice, so a clean voice-only recording would be better). Captions follow the speech; recipe `edit/build_vo.py`. To transcribe Hebrew speech: the Picsart `picsart_media_transcribe` tool with the public Drive download URL (returns text per segment, no word timings).
 
 ## Where things stand (handoff, 19 Nov 2026)
 
