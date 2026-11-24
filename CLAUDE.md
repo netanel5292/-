@@ -36,6 +36,7 @@ This is not a software project. There is no code, build, lint or test step. The 
   - No classes on Pesach, Shavuot and Sukkot (including Chol HaMoed), Memorial Day and Independence Day, 2 days of Chanukah, and Purim day.
   - Private training (BJJ, wrestling, Muay Thai, classic boxing, self-defense): ₪230 a single session; ₪205 a session in a prepaid 5-pack; ₪185 a session in a prepaid 10-pack.
   - Earlier note from the owner: most trainees pay ₪280.
+- **Merch, bags (supplier quote, 24 Nov 2026):** black side bag ₪65 + VAT plain, ₪79 + VAT printed; large backpack ₪120 + VAT (still to confirm whether that includes a print). VAT is 18%. The small backpacks at the end of the supplier's video are not wanted. Price sheet with photos cut from that video: `merch/bags-24-11.*` (the logo-on-bag picture is a mock-up).
 - **Space costs:** rent ₪12,000 + VAT a month (rises by ₪1,000 + VAT from 1 Dec 2026; the dashboard's "🔮 שנה קדימה" forecast includes it), public arnona ₪1,000, regular arnona ₪1,500. Other costs are not yet known.
 - **Location:** Ashkelon, Lev Ashkelon mall (קניון לב אשקלון), top floor. The owner is looking for another, cheaper space in Ashkelon and is seriously considering a move.
 - **Age:** the first year ends at the end of November 2026.
